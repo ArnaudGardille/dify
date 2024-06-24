@@ -3,17 +3,20 @@
 ### Backend
 
 ```bash
+screen -R docker
 cd docker
 docker compose -f docker-compose.middleware.yaml up -d
 ```
 
 ```bash
+screen -R flask
 cd api
 conda activate dify
 flask run --host 0.0.0.0 --port=5001 --debug
 ```
 
 ```bash
+screen -R celery 
 cd api
 conda activate dify
 celery -A app.celery worker -P gevent -c 1 -Q dataset,generation,mail --loglevel INFO
@@ -22,6 +25,7 @@ celery -A app.celery worker -P gevent -c 1 -Q dataset,generation,mail --loglevel
 ### Frontend
 
 ```bash
+screen -R frontend
 conda activate dify 
 cd web
 npm run start
