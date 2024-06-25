@@ -33,9 +33,8 @@ jobs:
       - name: Install dependencies
         run: |
           pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r api/requirements.txt
           npm install
-          working-directory: ./api
 
       - name: Build Frontend
         run: npm run build
@@ -43,9 +42,7 @@ jobs:
 
       - name: Build and run Docker containers
         run: |
-          docker compose -f docker-compose.middleware.yaml up -d --build
-          working-directory: ./docker
-
+          docker compose -f docker/docker-compose.middleware.yaml up -d --build
 
       - name: Apply database migrations (Flask)
         run: flask db upgrade
