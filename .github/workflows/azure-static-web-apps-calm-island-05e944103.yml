@@ -54,7 +54,7 @@ jobs:
 
       - name: Stop Docker containers
         if: always() # Toujours exécuter cette étape, même en cas d'échec précédent
-        run: docker compose -f docker docker-compose.middleware.yaml down
+        run: docker compose -f docker/docker-compose.middleware.yaml down
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
