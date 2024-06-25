@@ -22,16 +22,18 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' 
+          python-version: '3.10'
+
+      - name: Install Poetry
+        run: pip install poetry
 
       - name: Install Python dependencies
-        working-directory: ./api  # Changer le répertoire de travail pour ./api
+        working-directory: ./api  # Change to ./api directory
         run: |
-          pip install --upgrade pip
-          pip install -r requirements.txt
-  
+          poetry install
+
       - name: Install Node.js dependencies
-        working-directory: ./web # Changer le répertoire de travail pour ./web
+        working-directory: ./web  # Change to ./web directory
         run: npm install
 
       - name: Build Frontend
@@ -39,12 +41,13 @@ jobs:
         run: npm run build
 
       - name: Build and run Docker containers
+        working-directory: ./docker 
         run: |
-          docker compose -f docker/docker-compose.middleware.yaml up -d --build
+          docker compose -f docker-compose.middleware.yaml up -d --build
 
       - name: Apply database migrations (Flask)
+        working-directory: ./api  # Change to ./api directory
         run: flask db upgrade
-        working-directory: ./api # Chemin vers le répertoire du backend Flask
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
@@ -52,13 +55,14 @@ jobs:
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_calm-island-05e944103 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
-          app_location: "./web/build" # Dossier de sortie de la construction du frontend
-          api_location: "" # Pas de déploiement direct de l'API, car elle est gérée par Docker
+          app_location: "./web/build" # Output directory of frontend build
+          api_location: "" # No direct deployment of API as it is managed by Docker
           output_location: ""
 
       - name: Stop Docker containers
-        if: always() # Toujours exécuter cette étape, même en cas d'échec précédent
-        run: docker compose -f docker/docker-compose.middleware.yaml down
+        working-directory: ./docker 
+        if: always() # Always run this step, even if previous steps fail
+        run: docker compose -f docker-compose.middleware.yaml down
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
