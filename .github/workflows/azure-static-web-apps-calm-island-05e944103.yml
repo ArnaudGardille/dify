@@ -28,12 +28,12 @@ jobs:
         run: curl -sSL https://install.python-poetry.org | python3 -
 
       - name: Install Python dependencies
-        working-directory: ./api  # Change to ./api directory
+        working-directory: ./api
         run: |
           poetry install
 
       - name: Copy .env.example to .env and generate SECRET_KEY
-        working-directory: ./api  # Change to ./api directory
+        working-directory: ./api
         run: |
           cp .env.example .env
           secret_key=$(openssl rand -base64 42)
@@ -49,11 +49,11 @@ jobs:
             ${{ runner.os }}-node-
 
       - name: Install Node.js dependencies
-        working-directory: ./web  # Change to ./web directory
+        working-directory: ./web
         run: npm install
 
       - name: Configure frontend environment variables
-        working-directory: ./web  # Change to ./web directory
+        working-directory: ./web
         run: |
           cp .env.example .env.local
           echo "NEXT_PUBLIC_DEPLOY_ENV=DEVELOPMENT" >> .env.local
@@ -76,27 +76,28 @@ jobs:
         run: npm run build
 
       - name: Build and run Docker containers
-        working-directory: ./docker 
+        working-directory: ./docker
         run: |
           docker compose -f docker-compose.middleware.yaml up -d --build
 
       - name: Apply database migrations (Flask)
-        working-directory: ./api  # Change to ./api directory
+        working-directory: ./api
         run: poetry run python -m flask db upgrade
 
       - name: Deploy to Azure Static Web Apps
         uses: Azure/static-web-apps-deploy@v1
         with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_calm-island-05e944103 }}
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_05E944103 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "./web/.next" # Output directory of frontend build
           api_location: "" # No direct deployment of API as it is managed by Docker
           output_location: ""
+          app_build_command: "npm run build" # Specify the build command
 
       - name: Stop Docker containers
-        working-directory: ./docker 
-        if: always() # Always run this step, even if previous steps fail
+        working-directory: ./docker
+        if: always()
         run: docker compose -f docker-compose.middleware.yaml down
 
   close_pull_request_job:
