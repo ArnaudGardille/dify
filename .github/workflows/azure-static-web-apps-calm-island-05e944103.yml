@@ -28,8 +28,8 @@ jobs:
         uses: s-weigand/setup-conda@v1
         with:
           activate-environment: dify # Activer l'environnement Conda "dify"
-          python-version: ${{ matrix.python-version }}
-
+          python-version: '3.10'
+          
       - name: Install dependencies
         run: |
           pip install --upgrade pip
