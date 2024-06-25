@@ -22,13 +22,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10' # Version Python utilisée dans l'environnement Conda
-
-      - name: Set up Conda
-        uses: s-weigand/setup-conda@v1
-        with:
-          activate-environment: dify # Activer l'environnement Conda "dify"
-          python-version: '3.10'
+          python-version: '3.10' 
 
       - name: Install dependencies
         run: |
@@ -60,7 +54,7 @@ jobs:
 
       - name: Stop Docker containers
         if: always() # Toujours exécuter cette étape, même en cas d'échec précédent
-        run: docker compose -f docker-compose.middleware.yaml down
+        run: docker compose -f docker docker-compose.middleware.yaml down
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
