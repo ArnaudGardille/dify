@@ -25,14 +25,15 @@ jobs:
           python-version: '3.10' 
 
       - name: Install dependencies
+        working-directory: ./web # Répertoire de travail pour npm
         run: |
           pip install --upgrade pip
-          pip install -r api/requirements.txt
+          pip install -r api/requirements.txt  # Chemin correct vers requirements.txt
           npm install
 
       - name: Build Frontend
+        working-directory: ./web # Répertoire de travail pour npm
         run: npm run build
-        working-directory: ./web
 
       - name: Build and run Docker containers
         run: |
