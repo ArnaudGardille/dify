@@ -24,14 +24,18 @@ jobs:
         with:
           python-version: '3.10' 
 
-      - name: Install dependencies
-        working-directory: ./web # Répertoire de travail pour npm
+      - name: Install Python dependencies
+        working-directory: ./api  # Changer le répertoire de travail pour ./api
         run: |
-          pip install -r api/requirements.txt 
-          npm install
+          pip install --upgrade pip
+          pip install -r requirements.txt
+  
+      - name: Install Node.js dependencies
+        working-directory: ./web # Changer le répertoire de travail pour ./web
+        run: npm install
 
       - name: Build Frontend
-        working-directory: ./web # Répertoire de travail pour npm
+        working-directory: ./web 
         run: npm run build
 
       - name: Build and run Docker containers
