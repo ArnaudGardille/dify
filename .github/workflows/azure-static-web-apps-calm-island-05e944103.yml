@@ -29,12 +29,13 @@ jobs:
         with:
           activate-environment: dify # Activer l'environnement Conda "dify"
           python-version: '3.10'
-          
+
       - name: Install dependencies
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
           npm install
+          working-directory: ./api
 
       - name: Build Frontend
         run: npm run build
@@ -43,6 +44,8 @@ jobs:
       - name: Build and run Docker containers
         run: |
           docker compose -f docker-compose.middleware.yaml up -d --build
+          working-directory: ./docker
+
 
       - name: Apply database migrations (Flask)
         run: flask db upgrade
