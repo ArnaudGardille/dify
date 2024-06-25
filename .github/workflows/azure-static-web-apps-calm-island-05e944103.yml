@@ -78,7 +78,7 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           action: "upload"
           app_location: "./web/.next" # Output directory of frontend build
-          api_location: "" # No direct deployment of API as it is managed by Docker
+          api_location: "./api" # No direct deployment of API as it is managed by Docker
           output_location: ""
           app_build_command: "npm run build" # Specify the build command
 
