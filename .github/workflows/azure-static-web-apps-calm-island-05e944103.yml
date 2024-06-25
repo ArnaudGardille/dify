@@ -44,15 +44,6 @@ jobs:
           secret_key=$(openssl rand -base64 42)
           sed -i "/^SECRET_KEY=/c\SECRET_KEY=${secret_key}" .env
 
-      - name: Cache Node.js modules
-        id: cache-node-modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-
       - name: Install Node.js dependencies
         working-directory: ./web
         run: npm install
@@ -66,15 +57,6 @@ jobs:
           echo "NEXT_PUBLIC_API_PREFIX=http://localhost:5001/console/api" >> .env.local
           echo "NEXT_PUBLIC_PUBLIC_API_PREFIX=http://localhost:5001/api" >> .env.local
           echo "NEXT_PUBLIC_SENTRY_DSN=" >> .env.local
-
-      - name: Cache Next.js build
-        id: cache-next-build
-        uses: actions/cache@v3
-        with:
-          path: ./web/.next/cache
-          key: ${{ runner.os }}-next-build-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-next-build-
 
       - name: Build Frontend
         working-directory: ./web 
