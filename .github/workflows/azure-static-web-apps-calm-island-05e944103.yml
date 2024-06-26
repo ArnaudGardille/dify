@@ -42,11 +42,11 @@ jobs:
           cp .env.example .env.local
           echo "NEXT_PUBLIC_DEPLOY_ENV=DEVELOPMENT" >> .env.local
           echo "NEXT_PUBLIC_EDITION=SELF_HOSTED" >> .env.local
-          echo "NEXT_PUBLIC_API_PREFIX=http://<YOUR_BACKEND_URL>/console/api" >> .env.local # Replace <YOUR_BACKEND_URL> with actual backend URL.
-          echo "NEXT_PUBLIC_PUBLIC_API_PREFIX=http://<YOUR_BACKEND_URL>/api" >> .env.local # Replace <YOUR_BACKEND_URL> with actual backend URL.
+          echo "NEXT_PUBLIC_API_PREFIX=http://http://vigie.francecentral.cloudapp.azure.com:3000/console/api" >> .env.local 
+          echo "NEXT_PUBLIC_PUBLIC_API_PREFIX=http://http://vigie.francecentral.cloudapp.azure.com:3000/api" >> .env.local 
           echo "NEXT_PUBLIC_SENTRY_DSN=" >> .env.local
 
-      # Build Frontend.
+      # Build Frontend before deploying Docker containers for dependencies.
       - name: Build Frontend 
         working-directory : ./web  
         run : yarn build 
