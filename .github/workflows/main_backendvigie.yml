@@ -24,6 +24,17 @@ jobs:
       - name: Install dependencies
         working-directory: ./api
         run: poetry install
+
+      # Start Docker containers for middleware services
+      - name: Build and run Docker containers for dependencies
+        working-directory: ./docker
+        run: |
+          docker-compose -f docker-compose.middleware.yaml up -d --build
+
+      # Apply database migrations (Flask)
+      - name: Apply database migrations (Flask)
+        working-directory: ./api
+        run: poetry run python -m flask db upgrade
       
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
@@ -54,7 +65,8 @@ jobs:
           name: python-app
 
       - name: Unzip artifact for deployment
-        run: unzip api/release.zip
+        working-directory: ./api
+        run: unzip release.zip
       
       - name: Login to Azure
         uses: azure/login@v1
@@ -69,3 +81,9 @@ jobs:
         with:
           app-name: 'backendVigie'
           slot-name: 'Production'
+
+      # Stop Docker containers for middleware services after deployment
+      - name: Stop Docker containers for dependencies
+        working-directory: ./docker
+        if: always()
+        run: docker-compose -f docker-compose.middleware.yaml down

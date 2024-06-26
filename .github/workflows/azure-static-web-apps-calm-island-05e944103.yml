@@ -24,14 +24,6 @@ jobs:
         with:
           node-version: '18.x'
 
-      - name: Set up Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '3.10'
-
-      - name: Install Poetry
-        run: curl -sSL https://install.python-poetry.org | python3 -
-
       - name: Cache Node.js modules
         uses: actions/cache@v3
         with:
@@ -39,26 +31,6 @@ jobs:
           key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
             ${{ runner.os }}-yarn-
-
-      - name: Cache Python packages
-        uses: actions/cache@v3
-        with:
-          path: ~/.cache/pypoetry
-          key: ${{ runner.os }}-poetry-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-poetry-
-
-      - name: Install Python dependencies
-        working-directory: ./api
-        run: |
-          poetry install
-
-      - name: Copy .env.example to .env and generate SECRET_KEY
-        working-directory: ./api
-        run: |
-          cp .env.example .env
-          secret_key=$(openssl rand -base64 42)
-          sed -i "/^SECRET_KEY=/c\SECRET_KEY=${secret_key}" .env
 
       - name: Install Node.js dependencies
         working-directory: ./web
@@ -70,28 +42,14 @@ jobs:
           cp .env.example .env.local
           echo "NEXT_PUBLIC_DEPLOY_ENV=DEVELOPMENT" >> .env.local
           echo "NEXT_PUBLIC_EDITION=SELF_HOSTED" >> .env.local
-          echo "NEXT_PUBLIC_API_PREFIX=http://localhost:${{ secrets.BACKEND_PORT }}/console/api" >> .env.local # Use actual backend URL in production.
-          echo "NEXT_PUBLIC_PUBLIC_API_PREFIX=http://localhost:${{ secrets.BACKEND_PORT }}/api" >> .env.local # Use actual backend URL in production.
+          echo "NEXT_PUBLIC_API_PREFIX=http://<YOUR_BACKEND_URL>/console/api" >> .env.local # Replace <YOUR_BACKEND_URL> with actual backend URL.
+          echo "NEXT_PUBLIC_PUBLIC_API_PREFIX=http://<YOUR_BACKEND_URL>/api" >> .env.local # Replace <YOUR_BACKEND_URL> with actual backend URL.
           echo "NEXT_PUBLIC_SENTRY_DSN=" >> .env.local
 
-      # Build Frontend before deploying Docker containers for dependencies.
+      # Build Frontend.
       - name: Build Frontend 
         working-directory : ./web  
         run : yarn build 
-
-      # Deploy middleware services as Docker containers.
-      # Ensure you have Docker installed on your runner or use a self-hosted runner with Docker support.
-      # In production, consider using managed services like Azure Database for PostgreSQL and Azure Cache for Redis.
-      
-      - name : Build and run Docker containers for dependencies 
-        working-directory : ./docker 
-        run : | 
-          docker compose-f docker-compose.middleware.yaml up-d--build 
-
-      # Apply database migrations (Flask) 
-      - name : Apply database migrations (Flask) 
-        working-directory : ./api 
-        run : poetry run python-m flask db upgrade 
 
       # Deploy to Azure Static Web Apps 
       - name : Deploy to Azure Static Web Apps 
@@ -101,25 +59,17 @@ jobs:
           repo_token : ${{ secrets.GITHUB_TOKEN }}
           action : 'upload'
           app_location : './web' # Directory of your Next.js app 
-          api_location : './api' # Directory of your API code 
           output_location : './web/.next' # Output directory of frontend build 
           app_build_command : 'yarn build' # Specify the build command for the frontend 
-          api_build_command : '' # No build command needed for the API 
 
-      # Stop Docker containers for dependencies 
-      - name : Stop Docker containers for dependencies 
-        working-directory : ./docker 
-        if : always() 
-        run : docker compose-f docker-compose.middleware.yaml down 
-
-  close_pull_request_job :
-    if : github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on : ubuntu-latest 
-    name : Close Pull Request Job 
-    steps :
-      - name : Close Pull Request 
-        id : closepullrequest 
-        uses : Azure/static-web-apps-deploy@v1 
-        with :
+  close_pull_request_job:
+    if: github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on: ubuntu-latest 
+    name: Close Pull Request Job 
+    steps:
+      - name: Close Pull Request 
+        id: closepullrequest 
+        uses: Azure/static-web-apps-deploy@v1 
+        with:
           azure_static_web_apps_api_token : ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_05E944103 }}
           action : 'close'
