@@ -22,11 +22,13 @@ jobs:
         run: curl -sSL https://install.python-poetry.org | python3 -
 
       - name: Install dependencies
+        working-directory: ./api
         run: poetry install
       
       # Optional: Add step to run tests here (PyTest, Django test suites, etc.)
 
       - name: Zip artifact for deployment
+        working-directory: ./api
         run: zip release.zip ./* -r
 
       - name: Upload artifact for deployment jobs
@@ -34,7 +36,7 @@ jobs:
         with:
           name: python-app
           path: |
-            release.zip
+            ./api/release.zip
 
   deploy:
     runs-on: ubuntu-latest
@@ -52,7 +54,7 @@ jobs:
           name: python-app
 
       - name: Unzip artifact for deployment
-        run: unzip release.zip
+        run: unzip api/release.zip
       
       - name: Login to Azure
         uses: azure/login@v1
