@@ -70,48 +70,56 @@ jobs:
           cp .env.example .env.local
           echo "NEXT_PUBLIC_DEPLOY_ENV=DEVELOPMENT" >> .env.local
           echo "NEXT_PUBLIC_EDITION=SELF_HOSTED" >> .env.local
-          echo "NEXT_PUBLIC_API_PREFIX=http://localhost:5001/console/api" >> .env.local
-          echo "NEXT_PUBLIC_PUBLIC_API_PREFIX=http://localhost:5001/api" >> .env.local
+          echo "NEXT_PUBLIC_API_PREFIX=http://localhost:${{ secrets.BACKEND_PORT }}/console/api" >> .env.local # Use actual backend URL in production.
+          echo "NEXT_PUBLIC_PUBLIC_API_PREFIX=http://localhost:${{ secrets.BACKEND_PORT }}/api" >> .env.local # Use actual backend URL in production.
           echo "NEXT_PUBLIC_SENTRY_DSN=" >> .env.local
 
-      - name: Build Frontend
-        working-directory: ./web  
-        run: yarn build
+      # Build Frontend before deploying Docker containers for dependencies.
+      - name: Build Frontend 
+        working-directory : ./web  
+        run : yarn build 
 
-      - name: Build and run Docker containers for dependencies
-        working-directory: ./docker
-        run: |
-          docker compose -f docker-compose.middleware.yaml up -d --build
+      # Deploy middleware services as Docker containers.
+      # Ensure you have Docker installed on your runner or use a self-hosted runner with Docker support.
+      # In production, consider using managed services like Azure Database for PostgreSQL and Azure Cache for Redis.
+      
+      - name : Build and run Docker containers for dependencies 
+        working-directory : ./docker 
+        run : | 
+          docker compose-f docker-compose.middleware.yaml up-d--build 
 
-      - name: Apply database migrations (Flask)
-        working-directory: ./api
-        run: poetry run python -m flask db upgrade
+      # Apply database migrations (Flask) 
+      - name : Apply database migrations (Flask) 
+        working-directory : ./api 
+        run : poetry run python-m flask db upgrade 
 
-      - name: Deploy to Azure Static Web Apps
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_05E944103 }}
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          action: 'upload'
-          app_location: './web' # Directory of your Next.js app
-          api_location: './api' # Directory of your API code
-          output_location: './web/.next' # Output directory of frontend build
-          app_build_command: 'yarn build' # Specify the build command for the frontend
-          api_build_command: '' # No build command needed for the API
+      # Deploy to Azure Static Web Apps 
+      - name : Deploy to Azure Static Web Apps 
+        uses : Azure/static-web-apps-deploy@v1 
+        with :
+          azure_static_web_apps_api_token : ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_05E944103 }}
+          repo_token : ${{ secrets.GITHUB_TOKEN }}
+          action : 'upload'
+          app_location : './web' # Directory of your Next.js app 
+          api_location : './api' # Directory of your API code 
+          output_location : './web/.next' # Output directory of frontend build 
+          app_build_command : 'yarn build' # Specify the build command for the frontend 
+          api_build_command : '' # No build command needed for the API 
 
-      - name: Stop Docker containers for dependencies
-        working-directory: ./docker
-        if: always()
-        run: docker compose -f docker-compose.middleware.yaml down
+      # Stop Docker containers for dependencies 
+      - name : Stop Docker containers for dependencies 
+        working-directory : ./docker 
+        if : always() 
+        run : docker compose-f docker-compose.middleware.yaml down 
 
-  close_pull_request_job:
-    if: github.event_name == 'pull_request' && github.event.action == 'closed'
-    runs-on: ubuntu-latest
-    name: Close Pull Request Job
-    steps:
-      - name: Close Pull Request
-        id: closepullrequest
-        uses: Azure/static-web-apps-deploy@v1
-        with:
-          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_05E944103 }}
-          action: 'close'
+  close_pull_request_job :
+    if : github.event_name == 'pull_request' && github.event.action == 'closed'
+    runs-on : ubuntu-latest 
+    name : Close Pull Request Job 
+    steps :
+      - name : Close Pull Request 
+        id : closepullrequest 
+        uses : Azure/static-web-apps-deploy@v1 
+        with :
+          azure_static_web_apps_api_token : ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_CALM_ISLAND_05E944103 }}
+          action : 'close'
