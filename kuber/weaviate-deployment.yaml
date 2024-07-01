@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dify-weaviate
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dify-weaviate
+  template:
+    metadata:
+      labels:
+        app: dify-weaviate
+    spec:
+      containers:
+      - name: dify-weaviate
+        image: semitechnologies/weaviate:1.19.0  
+        env:  # Configuration from your Docker Compose file
+        - name: QUERY_DEFAULTS_LIMIT
+          value: "25"
+        - name: AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED
+          value: "false"
+          # ... (Add other Weaviate environment variables)
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: weaviate-data
+          mountPath: /var/lib/weaviate 
+      volumes:
+      - name: weaviate-data
+        persistentVolumeClaim:
+          claimName: dify-weaviate-pvc

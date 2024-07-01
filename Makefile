@@ -1,7 +1,7 @@
 # Variables
-DOCKER_REGISTRY=langgenius
-WEB_IMAGE=$(DOCKER_REGISTRY)/dify-web
-API_IMAGE=$(DOCKER_REGISTRY)/dify-api
+DOCKER_REGISTRY= myregistryvigie.azurecr.io
+WEB_IMAGE=$(DOCKER_REGISTRY)/vigie-web
+API_IMAGE=$(DOCKER_REGISTRY)/vigie-api
 VERSION=latest
 
 # Build Docker images

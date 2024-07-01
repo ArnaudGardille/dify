@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dify-web
+spec:
+  replicas: 1  # Start with 1 replica, scale as needed
+  selector:
+    matchLabels:
+      app: dify-web
+  template:
+    metadata:
+      labels:
+        app: dify-web
+    spec:
+      containers:
+      - name: dify-web
+        image: myregistryvigie.azurecr.io/vigie-web:latest
+        ports:
+        - containerPort: 3000
+        env:
+          - name: CONSOLE_API_URL
+            value: "http://dify-api:5001"  # Point to API service within the cluster
+          - name: APP_API_URL
+            value: "http://dify-api:5001"  
+          - name: NEXT_PUBLIC_DEPLOY_ENV
+            value: "DEVELOPMENT"
+          - name: NEXT_PUBLIC_EDITION
+            value: "SELF_HOSTED"
+          - name: NEXT_PUBLIC_API_PREFIX
+            value: "http://dify-api:5001/console/api" 
+          - name: NEXT_PUBLIC_PUBLIC_API_PREFIX
+            value: "http://dify-api:5001/api"

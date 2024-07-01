@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dify-db
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: dify-db
+  template:
+    metadata:
+      labels:
+        app: dify-db
+    spec:
+      containers:
+      - name: dify-db
+        image: postgres:15-alpine  # Use the official PostgreSQL image
+        env:
+          - name: POSTGRES_USER
+            value: postgres
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dify-db-secrets # Store sensitive information in secrets.
+                key: password
+          - name: POSTGRES_DB
+            value: dify
+        ports:
+        - containerPort: 5432
+        volumeMounts:
+        - name: db-data
+          mountPath: /var/lib/postgresql/data
+      volumes:
+      - name: db-data
+        persistentVolumeClaim:
+          claimName: dify-db-pvc

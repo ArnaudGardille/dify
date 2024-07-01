@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dify-api
+spec:
+  replicas: 1  # Start with 1 replica, scale as needed
+  selector:
+    matchLabels:
+      app: dify-api
+  template:
+    metadata:
+      labels:
+        app: dify-api
+    spec:
+      containers:
+      - name: dify-api
+        image: myregistryvigie.azurecr.io/vigie-api:latest 
+        ports:
+        - containerPort: 5001
+        env:  # Environment variables from your Docker Compose file
+          - name: SECRET_KEY
+            valueFrom:
+              secretKeyRef:
+                name: dify-api-secrets  
+                key: secret_key
+          - name: CONSOLE_API_URL 
+            value: "http://dify-web:80" # Assumes the web service is on port 80
+          - name: CONSOLE_WEB_URL
+            value: "http://dify-web:80"
+          - name: SERVICE_API_URL
+            value: "http://dify-api:5001" 
+          - name: APP_WEB_URL
+            value: "http://dify-web:80"
+          - name: FILES_URL
+            value: "http://dify-api:5001"
+          - name: FILES_ACCESS_TIMEOUT
+            value: "300"
+          - name: CELERY_BROKER_URL
+            value: "redis://:difyai123456@dify-redis:6379/1"
+          - name: REDIS_HOST
+            value: "dify-redis"  
+          - name: REDIS_PORT
+            value: "6379"
+          - name: REDIS_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dify-redis-secrets
+                key: password
+          - name: REDIS_DB
+            value: "0"
+          - name: DB_USERNAME
+            value: "postgres"
+          - name: DB_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: dify-db-secrets 
+                key: password
+          - name: DB_HOST
+            value: "dify-db"  
+          - name: DB_PORT
+            value: "5432"
+          - name: DB_DATABASE
+            value: "dify"
+          - name: STORAGE_TYPE
+            value: "local"
+          - name: STORAGE_LOCAL_PATH
+            value: "/app/api/storage" 
+          - name: WEAVIATE_ENDPOINT
+            value: "http://dify-weaviate:8080"  
+          - name: WEAVIATE_API_KEY
+            valueFrom:
+              secretKeyRef:
+                name: dify-weaviate-secrets 
+                key: api_key
+        - name: MODE 
+          value: api
+        - name: LOG_LEVEL
+          value: INFO
+        # ... (Include all your other environment variables from the Docker Compose file)
+        volumeMounts:
+        - name: storage  # Mount storage volume
+          mountPath: /app/api/storage 
+      volumes:
+      - name: storage   
+        persistentVolumeClaim: 
+          claimName: dify-storage-claim  # Create a PersistentVolumeClaim for storage
+
