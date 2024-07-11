@@ -64,3 +64,15 @@ sudo kill $(sudo lsof -t -i :80)
 ## Documentation
 
 Visit <https://docs.dify.ai/getting-started/readme> to view the full documentation.
+
+
+
+
+docker build -t vigie-api .
+docker build -t vigie-web .
+
+docker tag vigie-api arnaudbg/vigie-api
+docker tag vigie-web arnaudbg/vigie-web
+
+docker push arnaudbg/vigie-web
+docker push arnaudbg/vigie-api
