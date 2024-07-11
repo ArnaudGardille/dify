@@ -74,6 +74,9 @@ docker build -t vigie-web .
 docker tag vigie-api arnaudbg/vigie-api
 docker tag vigie-web arnaudbg/vigie-web
 
+docker tag vigie-api myRegistryVigie/vigie/vigie-api
+docker tag vigie-web myRegistryVigie/vigie/vigie-web
+
 docker push arnaudbg/vigie-web
 docker push arnaudbg/vigie-api
 
