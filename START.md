@@ -76,3 +76,9 @@ docker tag vigie-web arnaudbg/vigie-web
 
 docker push arnaudbg/vigie-web
 docker push arnaudbg/vigie-api
+
+docker tag vigie-api myRegistryVigie/vigie/vigie-api
+docker tag vigie-web myRegistryVigie/vigie/vigie-web
+
+docker push myRegistryVigie/vigie/vigie-api
+docker push myRegistryVigie/vigie/vigie-web

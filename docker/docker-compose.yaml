@@ -177,8 +177,8 @@ x-shared-env: &shared-api-worker-env
 services:
   # API service
   api:
-    #image: langgenius/dify-api:0.6.13
-    image: dify-api
+    image: langgenius/dify-api:0.6.13
+    #image: arnaudbg/vigie-api
     restart: always
     environment:
       # Use the shared environment variables.
@@ -198,8 +198,8 @@ services:
   # worker service
   # The Celery worker for processing the queue.
   worker:
-    #image: langgenius/dify-api:0.6.13
-    image: dify-api
+    image: langgenius/dify-api:0.6.13
+    #image: arnaudbg/vigie-api
     restart: always
     environment:
       # Use the shared environment variables.
@@ -218,8 +218,8 @@ services:
 
   # Frontend web application.
   web:
-    #image: langgenius/dify-web:0.6.13
-    image: dify-web
+    image: langgenius/dify-web:0.6.13
+    #image: arnaudbg/vigie-web
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}
@@ -257,7 +257,7 @@ services:
 
   # The DifySandbox
   sandbox:
-    image: langgenius/dify-sandbox:0.2.1
+    image: langgenius/dify-sandbox
     restart: always
     environment:
       # The DifySandbox configurations
