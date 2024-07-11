@@ -64,13 +64,13 @@ Dify is an open-source LLM app development platform. Its intuitive interface com
   Extensive RAG capabilities that cover everything from document ingestion to retrieval, with out-of-box support for text extraction from PDFs, PPTs, and other common document formats.
 
 **5. Agent capabilities**: 
-  You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. Dify provides 50+ built-in tools for AI agents, such as Google Search, DELL·E, Stable Diffusion and WolframAlpha.
+  You can define agents based on LLM Function Calling or ReAct, and add pre-built or custom tools for the agent. Vigie provides 50+ built-in tools for AI agents, such as Google Search, DELL·E, Stable Diffusion and WolframAlpha.
 
 **6. LLMOps**: 
   Monitor and analyze application logs and performance over time. You could continuously improve prompts, datasets, and models based on production data and annotations.
 
 **7. Backend-as-a-Service**: 
-  All of Dify's offerings come with corresponding APIs, so you could effortlessly integrate Dify into your own business logic.
+  All of Dify's offerings come with corresponding APIs, so you could effortlessly integrate Vigie into your own business logic.
 
 
 ## Feature comparison
@@ -145,8 +145,8 @@ Dify is an open-source LLM app development platform. Its intuitive interface com
 - **Cloud </br>**
 We host a [Dify Cloud](https://dify.ai) service for anyone to try with zero setup. It provides all the capabilities of the self-deployed version, and includes 200 free GPT-4 calls in the sandbox plan.
 
-- **Self-hosting Dify Community Edition</br>**
-Quickly get Dify running in your environment with this [starter guide](#quick-start).
+- **Self-hosting Vigie Community Edition</br>**
+Quickly get Vigie running in your environment with this [starter guide](#quick-start).
 Use our [documentation](https://docs.dify.ai) for further references and more in-depth instructions.
 
 - **Dify for enterprise / organizations</br>**
@@ -156,7 +156,7 @@ We provide additional enterprise-centric features. [Schedule a meeting with us](
 
 ## Staying ahead
 
-Star Dify on GitHub and be instantly notified of new releases.
+Star Vigie on GitHub and be instantly notified of new releases.
 
 ![star-us](https://github.com/langgenius/dify/assets/13230914/b823edc1-6388-4e25-ad45-2f6b187adbb4)
 
@@ -170,7 +170,7 @@ Star Dify on GitHub and be instantly notified of new releases.
 
 </br>
 
-The easiest way to start the Dify server is to run our [docker-compose.yml](docker/docker-compose.yaml) file. Before running the installation command, make sure that [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine:
+The easiest way to start the Vigie server is to run our [docker-compose.yml](docker/docker-compose.yaml) file. Before running the installation command, make sure that [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine:
 
 ```bash
 cd docker
@@ -178,15 +178,15 @@ cp .env.example .env
 docker compose up -d
 ```
 
-After running, you can access the Dify dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
+After running, you can access the Vigie dashboard in your browser at [http://localhost/install](http://localhost/install) and start the initialization process.
 
-> If you'd like to contribute to Dify or do additional development, refer to our [guide to deploying from source code](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
+> If you'd like to contribute to Vigie or do additional development, refer to our [guide to deploying from source code](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
 
 ## Next steps
 
 If you need to customize the configuration, please refer to the comments in our [.env.example](docker/.env.example) file and update the corresponding values in your `.env` file. Additionally, you might need to make adjustments to the `docker-compose.yaml` file itself, such as changing image versions, port mappings, or volume mounts, based on your specific deployment environment and requirements. After making any changes, please re-run `docker-compose up -d`. You can find the full list of available environment variables [here](https://docs.dify.ai/getting-started/install-self-hosted/environments).
 
-If you'd like to configure a highly-available setup, there are community-contributed [Helm Charts](https://helm.sh/) and YAML files which allow Dify to be deployed on Kubernetes.
+If you'd like to configure a highly-available setup, there are community-contributed [Helm Charts](https://helm.sh/) and YAML files which allow Vigie to be deployed on Kubernetes.
 
 - [Helm Chart by @LeoQuote](https://github.com/douban/charts/tree/master/charts/dify)
 - [Helm Chart by @BorisPolonsky](https://github.com/BorisPolonsky/dify-helm)
@@ -195,16 +195,16 @@ If you'd like to configure a highly-available setup, there are community-contrib
 #### Using Terraform for Deployment
 
 ##### Azure Global
-Deploy Dify to Azure with a single click using [terraform](https://www.terraform.io/).
+Deploy Vigie to Azure with a single click using [terraform](https://www.terraform.io/).
 - [Azure Terraform by @nikawang](https://github.com/nikawang/dify-azure-terraform)
 
 ## Contributing
 
 For those who'd like to contribute code, see our [Contribution Guide](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md). 
-At the same time, please consider supporting Dify by sharing it on social media and at events and conferences.
+At the same time, please consider supporting Vigie by sharing it on social media and at events and conferences.
 
 
-> We are looking for contributors to help with translating Dify to languages other than Mandarin or English. If you are interested in helping, please see the [i18n README](https://github.com/langgenius/dify/blob/main/web/i18n/README.md) for more information, and leave us a comment in the `global-users` channel of our [Discord Community Server](https://discord.gg/8Tpq4AcN9c).
+> We are looking for contributors to help with translating Vigie to languages other than Mandarin or English. If you are interested in helping, please see the [i18n README](https://github.com/langgenius/dify/blob/main/web/i18n/README.md) for more information, and leave us a comment in the `global-users` channel of our [Discord Community Server](https://discord.gg/8Tpq4AcN9c).
 
 **Contributors**
 

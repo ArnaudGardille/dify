@@ -1,6 +1,6 @@
-# Dify PHP SDK
+# Vigie PHP SDK
 
-This is the PHP SDK for the Dify API, which allows you to easily integrate Dify into your PHP applications.
+This is the PHP SDK for the Vigie API, which allows you to easily integrate Vigie into your PHP applications.
 
 ## Requirements
 
@@ -77,7 +77,7 @@ $response = $difyClient->message_feedback($message_id, $rating, "user_id");
 // - rename_conversation()
 ```
 
-Replace 'your-api-key-here' with your actual Dify API key.
+Replace 'your-api-key-here' with your actual Vigie API key.
 
 ## License
 

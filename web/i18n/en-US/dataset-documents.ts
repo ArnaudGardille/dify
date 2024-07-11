@@ -1,7 +1,7 @@
 const translation = {
   list: {
     title: 'Documents',
-    desc: 'All files of the Knowledge are shown here, and the entire Knowledge can be linked to Dify citations or indexed via the Chat plugin.',
+    desc: 'All files of the Knowledge are shown here, and the entire Knowledge can be linked to Vigie citations or indexed via the Chat plugin.',
     addFile: 'Add file',
     addPages: 'Add Pages',
     addUrl: 'Add URL',

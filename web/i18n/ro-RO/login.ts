@@ -56,7 +56,7 @@ const translation = {
     passwordInvalid: 'Parola trebuie să conțină litere și cifre, iar lungimea trebuie să fie mai mare de 8 caractere',
   },
   license: {
-    tip: 'Înainte de a începe Dify Community Edition, citește',
+    tip: 'Înainte de a începe Vigie Community Edition, citește',
     link: 'Licența open-source de pe GitHub',
   },
   join: 'Alătură-te',

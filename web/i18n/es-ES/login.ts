@@ -57,7 +57,7 @@ const translation = {
     passwordInvalid: 'La contraseña debe contener letras y números, y tener una longitud mayor a 8',
   },
   license: {
-    tip: 'Antes de comenzar con Dify Community Edition, lee la',
+    tip: 'Antes de comenzar con Vigie Community Edition, lee la',
     link: 'Licencia de código abierto de GitHub',
   },
   join: 'Unirse',

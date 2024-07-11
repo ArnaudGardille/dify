@@ -55,7 +55,7 @@ const translation = {
     passwordInvalid: '密码必须包含字母和数字，且长度不小于8位',
   },
   license: {
-    tip: '启动 Dify 社区版之前, 请阅读 GitHub 上的',
+    tip: '启动 Vigie 社区版之前, 请阅读 GitHub 上的',
     link: '开源协议',
   },
   join: '加入',

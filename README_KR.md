@@ -138,18 +138,18 @@
   </tr>
 </table>
 
-## Dify 사용하기
+## Vigie 사용하기
 
 - **클라우드 </br>**
   우리는 누구나 설정이 필요 없이 사용해 볼 수 있도록 [Dify 클라우드](https://dify.ai) 서비스를 호스팅합니다. 이는 자체 배포 버전의 모든 기능을 제공하며, 샌드박스 플랜에서 무료로 200회의 GPT-4 호출을 포함합니다.
 
-- **셀프-호스팅 Dify 커뮤니티 에디션</br>**
+- **셀프-호스팅 Vigie 커뮤니티 에디션</br>**
   환경에서 Dify를 빠르게 실행하려면 이  [스타터 가이드를](#quick-start) 참조하세요.
   추가 참조 및 더 심층적인 지침은 [문서](https://docs.dify.ai)를 사용하세요.
 
 - **기업 / 조직을 위한 Dify</br>**
   우리는 추가적인 기업 중심 기능을 제공합니다. 당사와 [미팅일정](https://cal.com/guchenhe/30min)을 잡거나  [이메일 보내기](mailto:business@dify.ai?subject=[GitHub]Business%20License%20Inquiry)를 통해 기업 요구 사항을 논의하십시오. </br>
-  > AWS를 사용하는 스타트업 및 중소기업의 경우 [AWS Marketplace에서 Dify Premium](https://aws.amazon.com/marketplace/pp/prodview-t22mebxzwjhu6)을 확인하고 한 번의 클릭으로 자체 AWS VPC에 배포하십시오. 맞춤형 로고와 브랜딩이 포함된 앱을 생성할 수 있는 옵션이 포함된 저렴한 AMI 제품입니다.
+  > AWS를 사용하는 스타트업 및 중소기업의 경우 [AWS Marketplace에서 Vigie Premium](https://aws.amazon.com/marketplace/pp/prodview-t22mebxzwjhu6)을 확인하고 한 번의 클릭으로 자체 AWS VPC에 배포하십시오. 맞춤형 로고와 브랜딩이 포함된 앱을 생성할 수 있는 옵션이 포함된 저렴한 AMI 제품입니다.
 
 
 
@@ -176,7 +176,7 @@ cp .env.example .env
 docker compose up -d
 ```
 
-실행 후 브라우저의 [http://localhost/install](http://localhost/install) 에서 Dify 대시보드에 액세스하고 초기화 프로세스를 시작할 수 있습니다.
+실행 후 브라우저의 [http://localhost/install](http://localhost/install) 에서 Vigie 대시보드에 액세스하고 초기화 프로세스를 시작할 수 있습니다.
 
 > Dify에 기여하거나 추가 개발을 하고 싶다면 소스 코드에서 [배포에 대한 가이드](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)를 참조하세요.
 

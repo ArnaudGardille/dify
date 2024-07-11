@@ -163,7 +163,7 @@ const translation = {
     confirmPassword: 'पासवर्ड की पुष्टि करें',
     notEqual: 'दो पासवर्ड अलग हैं।',
     langGeniusAccount: 'Dify खाता',
-    langGeniusAccountTip: 'आपका Dify खाता और संबंधित उपयोगकर्ता डेटा।',
+    langGeniusAccountTip: 'आपका Vigie खाता और संबंधित उपयोगकर्ता डेटा।',
     editName: 'नाम संपादित करें',
     showAppLength: '{{length}} ऐप्स दिखाएं',
   },
@@ -418,7 +418,7 @@ const translation = {
   },
   apiBasedExtension: {
     title:
-      'एपीआई एक्सटेंशन केंद्रीकृत एपीआई प्रबंधन प्रदान करते हैं, जो Dify के अनुप्रयोगों में आसान उपयोग के लिए कॉन्फ़िगरेशन को सरल बनाते हैं।',
+      'एपीआई एक्सटेंशन केंद्रीकृत एपीआई प्रबंधन प्रदान करते हैं, जो Vigie के अनुप्रयोगों में आसान उपयोग के लिए कॉन्फ़िगरेशन को सरल बनाते हैं।',
     link: 'अपना खुद का एपीआई एक्सटेंशन कैसे विकसित करें, यह जानें।',
     linkUrl: 'https://docs.dify.ai/features/extension/api_based_extension',
     add: 'एपीआई एक्सटेंशन जोड़ें',

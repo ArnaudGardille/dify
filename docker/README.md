@@ -1,6 +1,6 @@
 ## README for docker Deployment
 
-Welcome to the new `docker` directory for deploying Dify using Docker Compose. This README outlines the updates, deployment instructions, and migration details for existing users.
+Welcome to the new `docker` directory for deploying Vigie using Docker Compose. This README outlines the updates, deployment instructions, and migration details for existing users.
 
 ### What's Updated
 - **Persistent Environment Variables**: Environment variables are now managed through a `.env` file, ensuring that your configurations persist across deployments.
@@ -12,7 +12,7 @@ Welcome to the new `docker` directory for deploying Dify using Docker Compose. T
 - **Mandatory .env File**: A `.env` file is now required to run `docker compose up`. This file is crucial for configuring your deployment and for any custom settings to persist through upgrades.
 - **Legacy Support**: Previous deployment files are now located in the `docker-legacy` directory and will no longer be maintained.
 
-### How to Deploy Dify with `docker-compose.yaml`
+### How to Deploy Vigie with `docker-compose.yaml`
 1. **Prerequisites**: Ensure Docker and Docker Compose are installed on your system.
 2. **Environment Setup**:
    - Navigate to the `docker` directory.

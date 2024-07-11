@@ -25,7 +25,7 @@ const translation = {
     callTimes: 'Aufrufzeiten',
     usedToken: 'Verwendetes Token',
     setAPIBtn: 'Zum Einrichten des Modellanbieters gehen',
-    tryCloud: 'Oder probieren Sie die Cloud-Version von Dify mit kostenlosem Angebot aus',
+    tryCloud: 'Oder probieren Sie die Cloud-Version von Vigie mit kostenlosem Angebot aus',
   },
   overview: {
     title: 'Übersicht',
@@ -71,7 +71,7 @@ const translation = {
         explanation: 'Wählen Sie die Art und Weise, wie die Chat-App auf Ihrer Website eingebettet wird',
         iframe: 'Um die Chat-App an einer beliebigen Stelle auf Ihrer Website hinzuzufügen, fügen Sie diesen iframe in Ihren HTML-Code ein.',
         scripts: 'Um eine Chat-App unten rechts auf Ihrer Website hinzuzufügen, fügen Sie diesen Code in Ihren HTML-Code ein.',
-        chromePlugin: 'Installieren Sie die Dify Chatbot Chrome-Erweiterung',
+        chromePlugin: 'Installieren Sie die Vigie Chatbot Chrome-Erweiterung',
         copied: 'Kopiert',
         copy: 'Kopieren',
       },

@@ -1,7 +1,7 @@
 const translation = {
   list: {
     title: 'Tài liệu',
-    desc: 'Tất cả các tệp của Kiến thức được hiển thị ở đây, và toàn bộ Kiến thức có thể được liên kết với trích dẫn của Dify hoặc được lập chỉ mục thông qua plugin Chat.',
+    desc: 'Tất cả các tệp của Kiến thức được hiển thị ở đây, và toàn bộ Kiến thức có thể được liên kết với trích dẫn của Vigie hoặc được lập chỉ mục thông qua plugin Chat.',
     addFile: 'Thêm tệp',
     addPages: 'Thêm Trang',
     table: {

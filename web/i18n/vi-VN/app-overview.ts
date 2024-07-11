@@ -25,7 +25,7 @@ const translation = {
     callTimes: 'Số lần gọi',
     usedToken: 'Token đã sử dụng',
     setAPIBtn: 'Đi đến thiết lập nhà cung cấp mô hình',
-    tryCloud: 'Hoặc thử phiên bản điện toán đám mây của Dify với báo giá miễn phí',
+    tryCloud: 'Hoặc thử phiên bản điện toán đám mây của Vigie với báo giá miễn phí',
   },
   overview: {
     title: 'Tổng quan',
@@ -71,7 +71,7 @@ const translation = {
         explanation: 'Chọn cách nhúng ứng dụng trò chuyện vào trang web của bạn',
         iframe: 'Để thêm ứng dụng trò chuyện ở bất kỳ đâu trên trang web của bạn, hãy thêm iframe này vào mã HTML của bạn.',
         scripts: 'Để thêm ứng dụng trò chuyện vào góc dưới bên phải của trang web của bạn, thêm mã này vào mã HTML của bạn.',
-        chromePlugin: 'Cài đặt Tiện ích Mở rộng Dify Chatbot cho Chrome',
+        chromePlugin: 'Cài đặt Tiện ích Mở rộng Vigie Chatbot cho Chrome',
         copied: 'Đã sao chép',
         copy: 'Sao chép',
       },

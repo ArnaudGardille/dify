@@ -1,7 +1,7 @@
 const translation = {
   list: {
     title: 'Documents',
-    desc: 'Tous les fichiers de la Connaissance sont affichés ici, et l\'ensemble de la Connaissance peut être lié aux citations Dify ou indexé via le plugin Chat.',
+    desc: 'Tous les fichiers de la Connaissance sont affichés ici, et l\'ensemble de la Connaissance peut être lié aux citations Vigie ou indexé via le plugin Chat.',
     addFile: 'ajouter un fichier',
     addPages: 'Ajouter des Pages',
     table: {
