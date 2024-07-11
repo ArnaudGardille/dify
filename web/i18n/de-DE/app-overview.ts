@@ -25,7 +25,7 @@ const translation = {
     callTimes: 'Aufrufzeiten',
     usedToken: 'Verwendetes Token',
     setAPIBtn: 'Zum Einrichten des Modellanbieters gehen',
-    tryCloud: 'Oder probieren Sie die Cloud-Version von Dify mit kostenlosem Angebot aus',
+    tryCloud: 'Oder probieren Sie die Cloud-Version von Vigie mit kostenlosem Angebot aus',
   },
   overview: {
     title: 'Übersicht',
@@ -44,6 +44,15 @@ const translation = {
         webDescTip: 'Dieser Text wird auf der Clientseite angezeigt und bietet grundlegende Anleitungen zur Verwendung der Anwendung',
         webDescPlaceholder: 'Geben Sie die Beschreibung der WebApp ein',
         language: 'Sprache',
+        workflow: {
+          title: 'Workflow-Schritte',
+          show: 'Anzeigen',
+          hide: 'Verbergen',
+        },
+        chatColorTheme: 'Chat-Farbschema',
+        chatColorThemeDesc: 'Legen Sie das Farbschema des Chatbots fest',
+        chatColorThemeInverted: 'Invertiert',
+        invalidHexMessage: 'Ungültiger Hex-Wert',
         more: {
           entry: 'Mehr Einstellungen anzeigen',
           copyright: 'Urheberrecht',
@@ -62,7 +71,7 @@ const translation = {
         explanation: 'Wählen Sie die Art und Weise, wie die Chat-App auf Ihrer Website eingebettet wird',
         iframe: 'Um die Chat-App an einer beliebigen Stelle auf Ihrer Website hinzuzufügen, fügen Sie diesen iframe in Ihren HTML-Code ein.',
         scripts: 'Um eine Chat-App unten rechts auf Ihrer Website hinzuzufügen, fügen Sie diesen Code in Ihren HTML-Code ein.',
-        chromePlugin: 'Installieren Sie die Dify Chatbot Chrome-Erweiterung',
+        chromePlugin: 'Installieren Sie die Vigie Chatbot Chrome-Erweiterung',
         copied: 'Kopiert',
         copy: 'Kopieren',
       },

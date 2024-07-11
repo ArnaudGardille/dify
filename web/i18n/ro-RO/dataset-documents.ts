@@ -1,7 +1,7 @@
 const translation = {
   list: {
     title: 'Documente',
-    desc: 'Toate fișierele din Cunoștințe sunt afișate aici, iar întreaga Cunoaștere poate fi legată de citări Dify sau indexată prin intermediul pluginului Chat.',
+    desc: 'Toate fișierele din Cunoștințe sunt afișate aici, iar întreaga Cunoaștere poate fi legată de citări Vigie sau indexată prin intermediul pluginului Chat.',
     addFile: 'adaugă fișier',
     addPages: 'Adaugă pagini',
     table: {

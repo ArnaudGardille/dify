@@ -69,13 +69,13 @@ Dify est une plateforme de développement d'applications LLM open source. Son in
 **5. Capac
 
 ités d'agent**: 
-  Vous pouvez définir des agents basés sur l'appel de fonction LLM ou ReAct, et ajouter des outils pré-construits ou personnalisés pour l'agent. Dify fournit plus de 50 outils intégrés pour les agents d'IA, tels que la recherche Google, DELL·E, Stable Diffusion et WolframAlpha.
+  Vous pouvez définir des agents basés sur l'appel de fonction LLM ou ReAct, et ajouter des outils pré-construits ou personnalisés pour l'agent. Vigie fournit plus de 50 outils intégrés pour les agents d'IA, tels que la recherche Google, DELL·E, Stable Diffusion et WolframAlpha.
 
 **6. LLMOps**: 
   Surveillez et analysez les journaux d'application et les performances au fil du temps. Vous pouvez continuellement améliorer les prompts, les ensembles de données et les modèles en fonction des données de production et des annotations.
 
 **7. Backend-as-a-Service**: 
-  Toutes les offres de Dify sont accompagnées d'API correspondantes, vous permettant d'intégrer facilement Dify dans votre propre logique métier.
+  Toutes les offres de Vigie sont accompagnées d'API correspondantes, vous permettant d'intégrer facilement Vigie dans votre propre logique métier.
 
 
 ## Comparaison des fonctionnalités
@@ -150,8 +150,8 @@ ités d'agent**:
 - **Cloud </br>**
 Nous hébergeons un service [Dify Cloud](https://dify.ai) pour que tout le monde puisse l'essayer sans aucune configuration. Il fournit toutes les capacités de la version auto-hébergée et comprend 200 appels GPT-4 gratuits dans le plan bac à sable.
 
-- **Auto-hébergement Dify Community Edition</br>**
-Lancez rapidement Dify dans votre environnement avec ce [guide de démarrage](#quick-start).
+- **Auto-hébergement Vigie Community Edition</br>**
+Lancez rapidement Vigie dans votre environnement avec ce [guide de démarrage](#quick-start).
 Utilisez notre [documentation](https://docs.dify.ai) pour plus de références et des instructions plus détaillées.
 
 - **Dify pour les entreprises / organisations</br>**
@@ -161,7 +161,7 @@ Nous proposons des fonctionnalités supplémentaires adaptées aux entreprises. 
 
 ## Rester en avance
 
-Mettez une étoile à Dify sur GitHub et soyez instantanément informé des nouvelles versions.
+Mettez une étoile à Vigie sur GitHub et soyez instantanément informé des nouvelles versions.
 
 ![star-us](https://github.com/langgenius/dify/assets/13230914/b823edc1-6388-4e25-ad45-2f6b187adbb4)
 
@@ -175,37 +175,42 @@ Mettez une étoile à Dify sur GitHub et soyez instantanément informé des nouv
 
 </br>
 
-La manière la plus simple de démarrer le serveur Dify est d'exécuter notre fichier [docker-compose.yml](docker/docker-compose.yaml). Avant d'exécuter la commande d'installation, assurez-vous que [Docker](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/install/) sont installés sur votre machine:
+La manière la plus simple de démarrer le serveur Vigie est d'exécuter notre fichier [docker-compose.yml](docker/docker-compose.yaml). Avant d'exécuter la commande d'installation, assurez-vous que [Docker](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/install/) sont installés sur votre machine:
 
 ```bash
 cd docker
+cp .env.example .env
 docker compose up -d
 ```
 
-Après l'exécution, vous pouvez accéder au tableau de bord Dify dans votre navigateur à [http://localhost/install](http://localhost/install) et commencer le processus d'initialisation.
+Après l'exécution, vous pouvez accéder au tableau de bord Vigie dans votre navigateur à [http://localhost/install](http://localhost/install) et commencer le processus d'initialisation.
 
-> Si vous souhaitez contribuer à Dify ou effectuer un développement supplémentaire, consultez notre [guide de déploiement à partir du code source](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
+> Si vous souhaitez contribuer à Vigie ou effectuer un développement supplémentaire, consultez notre [guide de déploiement à partir du code source](https://docs.dify.ai/getting-started/install-self-hosted/local-source-code)
 
 ## Prochaines étapes
 
-Si vous devez personnaliser la configuration, veuillez
+Si vous devez personnaliser la configuration, veuillez vous référer aux commentaires dans notre fichier [.env.example](docker/.env.example) et mettre à jour les valeurs correspondantes dans votre fichier `.env`. De plus, vous devrez peut-être apporter des modifications au fichier `docker-compose.yaml` lui-même, comme changer les versions d'image, les mappages de ports ou les montages de volumes, en fonction de votre environnement de déploiement et de vos exigences spécifiques. Après avoir effectué des modifications, veuillez réexécuter `docker-compose up -d`. Vous pouvez trouver la liste complète des variables d'environnement disponibles [ici](https://docs.dify.ai/getting-started/install-self-hosted/environments).
 
- vous référer aux commentaires dans notre fichier [docker-compose.yml](docker/docker-compose.yaml) et définir manuellement la configuration de l'environnement. Après avoir apporté les modifications, veuillez exécuter à nouveau `docker-compose up -d`. Vous pouvez voir la liste complète des variables d'environnement [ici](https://docs.dify.ai/getting-started/install-self-hosted/environments).
-
-Si vous souhaitez configurer une configuration haute disponibilité, la communauté fournit des [Helm Charts](https://helm.sh/) et des fichiers YAML, à travers lesquels vous pouvez déployer Dify sur Kubernetes.
+Si vous souhaitez configurer une configuration haute disponibilité, la communauté fournit des [Helm Charts](https://helm.sh/) et des fichiers YAML, à travers lesquels vous pouvez déployer Vigie sur Kubernetes.
 
 - [Helm Chart par @LeoQuote](https://github.com/douban/charts/tree/master/charts/dify)
 - [Helm Chart par @BorisPolonsky](https://github.com/BorisPolonsky/dify-helm)
 - [Fichier YAML par @Winson-030](https://github.com/Winson-030/dify-kubernetes)
 
+#### Utilisation de Terraform pour le déploiement
+
+##### Azure Global
+Utilisez [terraform](https://www.terraform.io/) pour déployer Vigie sur Azure en un clic.
+- [Azure Terraform par @nikawang](https://github.com/nikawang/dify-azure-terraform)
+
 
 ## Contribuer
 
 Pour ceux qui souhaitent contribuer du code, consultez notre [Guide de contribution](https://github.com/langgenius/dify/blob/main/CONTRIBUTING.md). 
-Dans le même temps, veuillez envisager de soutenir Dify en le partageant sur les réseaux sociaux et lors d'événements et de conférences.
+Dans le même temps, veuillez envisager de soutenir Vigie en le partageant sur les réseaux sociaux et lors d'événements et de conférences.
 
 
-> Nous recherchons des contributeurs pour aider à traduire Dify dans des langues autres que le mandarin ou l'anglais. Si vous êtes intéressé à aider, veuillez consulter le [README i18n](https://github.com/langgenius/dify/blob/main/web/i18n/README.md) pour plus d'informations, et laissez-nous un commentaire dans le canal `global-users` de notre [Serveur communautaire Discord](https://discord.gg/8Tpq4AcN9c).
+> Nous recherchons des contributeurs pour aider à traduire Vigie dans des langues autres que le mandarin ou l'anglais. Si vous êtes intéressé à aider, veuillez consulter le [README i18n](https://github.com/langgenius/dify/blob/main/web/i18n/README.md) pour plus d'informations, et laissez-nous un commentaire dans le canal `global-users` de notre [Serveur communautaire Discord](https://discord.gg/8Tpq4AcN9c).
 
 **Contributeurs**
 

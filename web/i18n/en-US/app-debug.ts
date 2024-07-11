@@ -201,7 +201,7 @@ const translation = {
   },
   automatic: {
     title: 'Automated application orchestration',
-    description: 'Describe your scenario, Dify will orchestrate an application for you.',
+    description: 'Describe your scenario, Vigie will orchestrate an application for you.',
     intendedAudience: 'Who is the intended audience?',
     intendedAudiencePlaceHolder: 'e.g. Student',
     solveProblem: 'What problems do they hope AI can solve for them?',
@@ -323,6 +323,9 @@ const translation = {
       language: 'Language',
       resolutionTooltip: 'Text-to-speech voice support language。',
       voice: 'Voice',
+      autoPlay: 'Auto Play',
+      autoPlayEnabled: 'Turn On',
+      autoPlayDisabled: 'Turn Off',
     },
   },
   openingStatement: {

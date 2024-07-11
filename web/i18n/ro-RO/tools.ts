@@ -8,7 +8,7 @@ const translation = {
   },
   contribute: {
     line1: 'Sunt interesat să ',
-    line2: 'contribui la Dify cu instrumente.',
+    line2: 'contribui la Vigie cu instrumente.',
     viewGuide: 'Vezi ghidul',
   },
   author: 'De',
@@ -71,6 +71,8 @@ const translation = {
     },
     privacyPolicy: 'Politica de Confidențialitate',
     privacyPolicyPlaceholder: 'Vă rugăm să introduceți politica de confidențialitate',
+    deleteToolConfirmTitle: 'Ștergeți această unealtă?',
+    deleteToolConfirmContent: ' Ștergerea uneltă este irreversibilă. Utilizatorii nu vor mai putea accesa uneltă dvs.',
   },
   test: {
     title: 'Testează',

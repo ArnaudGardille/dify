@@ -8,10 +8,11 @@ const translation = {
   deleteDatasetConfirmTitle: 'Ștergeți această Cunoștință?',
   deleteDatasetConfirmContent:
     'Ștergerea Cunoștințelor este ireversibilă. Utilizatorii nu vor mai putea accesa Cunoștințele, iar toate configurațiile și jurnalele prompt vor fi șterse permanent.',
+  datasetUsedByApp: 'Cunoștințele sunt utilizate de unele aplicații. Aplicațiile nu vor mai putea utiliza aceste Cunoștințe, iar toate configurațiile de prompt și jurnalele vor fi șterse definitiv.',
   datasetDeleted: 'Cunoștințe șterse',
   datasetDeleteFailed: 'Eșec la ștergerea Cunoștințelor',
   didYouKnow: 'Știați că?',
-  intro1: 'Cunoștințele pot fi integrate în aplicația Dify ',
+  intro1: 'Cunoștințele pot fi integrate în aplicația Vigie ',
   intro2: 'ca un context',
   intro3: ',',
   intro4: 'sau ele ',

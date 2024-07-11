@@ -28,7 +28,7 @@ const translation = {
     callTimes: 'कॉल समय',
     usedToken: 'उपयोग किया गया टोकन',
     setAPIBtn: 'मॉडल प्रदाता सेटअप पर जाएं',
-    tryCloud: 'या मुफ्त कोटा के साथ Dify का क्लाउड संस्करण आज़माएं',
+    tryCloud: 'या मुफ्त कोटा के साथ Vigie का क्लाउड संस्करण आज़माएं',
   },
   overview: {
     title: 'अवलोकन',
@@ -48,6 +48,15 @@ const translation = {
           'यह टेक्स्ट क्लाइंट साइड पर प्रदर्शित होगा, जो एप्लिकेशन का उपयोग करने के लिए बुनियादी मार्गदर्शन प्रदान करेगा',
         webDescPlaceholder: 'वेबऐप का विवरण दर्ज करें',
         language: 'भाषा',
+        workflow: {
+          title: 'वर्कफ़्लो स्टेप्स',
+          show: 'दिखाएं',
+          hide: 'छुपाएं',
+        },
+        chatColorTheme: 'चैटबॉट का रंग थीम',
+        chatColorThemeDesc: 'चैटबॉट का रंग थीम निर्धारित करें',
+        chatColorThemeInverted: 'उल्टा',
+        invalidHexMessage: 'अमान्य हेक्स मान',
         more: {
           entry: 'अधिक सेटिंग्स दिखाएं',
           copyright: 'कॉपीराइट',
@@ -55,7 +64,7 @@ const translation = {
           privacyPolicy: 'गोपनीयता नीति',
           privacyPolicyPlaceholder: 'गोपनीयता नीति लिंक दर्ज करें',
           privacyPolicyTip:
-            'आगंतुकों को यह समझने में मदद करता है कि एप्लिकेशन कौन सा डेटा एकत्र करता है, देखें Dify की <privacyPolicyLink>गोपनीयता नीति</privacyPolicyLink>।',
+            'आगंतुकों को यह समझने में मदद करता है कि एप्लिकेशन कौन सा डेटा एकत्र करता है, देखें Vigie की <privacyPolicyLink>गोपनीयता नीति</privacyPolicyLink>।',
           customDisclaimer: 'कस्टम अस्वीकरण',
           customDisclaimerPlaceholder: 'कस्टम अस्वीकरण टेक्स्ट दर्ज करें',
           customDisclaimerTip:

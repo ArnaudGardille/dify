@@ -8,7 +8,7 @@ const translation = {
   },
   contribute: {
     line1: 'Ich interessiere mich dafür, ',
-    line2: 'Werkzeuge zu Dify beizutragen.',
+    line2: 'Werkzeuge zu Vigie beizutragen.',
     viewGuide: 'Leitfaden anzeigen',
   },
   author: 'Von',
@@ -73,6 +73,8 @@ const translation = {
     privacyPolicyPlaceholder: 'Bitte Datenschutzrichtlinie eingeben',
     customDisclaimer: 'Benutzer Haftungsausschluss',
     customDisclaimerPlaceholder: 'Bitte benutzerdefinierten Haftungsausschluss eingeben',
+    deleteToolConfirmTitle: 'Löschen Sie dieses Werkzeug?',
+    deleteToolConfirmContent: 'Das Löschen des Werkzeugs ist irreversibel. Benutzer können Ihr Werkzeug nicht mehr verwenden.',
   },
   test: {
     title: 'Test',

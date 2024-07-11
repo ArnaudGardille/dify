@@ -153,7 +153,7 @@ const translation = {
     confirmPassword: 'Підтвердіть пароль',
     notEqual: 'Два паролі різняться.',
     langGeniusAccount: 'Обліковий запис Dify',
-    langGeniusAccountTip: 'Ваш обліковий запис Dify та пов’язані з ним дані користувача.',
+    langGeniusAccountTip: 'Ваш обліковий запис Vigie та пов’язані з ним дані користувача.',
     editName: 'Редагувати ім\'я',
     showAppLength: 'Показати {{length}} програм',
     delete: 'Видалити обліковий запис',

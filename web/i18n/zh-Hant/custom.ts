@@ -22,7 +22,7 @@ const translation = {
   restore: '恢復預設',
   customize: {
     contactUs: '聯絡我們',
-    prefix: '如需在 Dify 內自定義品牌圖示，請',
+    prefix: '如需在 Vigie 內自定義品牌圖示，請',
     suffix: '升級至企業版。',
   },
 }

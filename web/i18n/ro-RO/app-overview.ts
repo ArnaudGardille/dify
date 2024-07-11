@@ -25,7 +25,7 @@ const translation = {
     callTimes: 'Apeluri efectuate',
     usedToken: 'Token utilizat',
     setAPIBtn: 'Mergeți la configurarea furnizorului de modele',
-    tryCloud: 'Sau încercați versiunea cloud a Dify cu cotă gratuită',
+    tryCloud: 'Sau încercați versiunea cloud a Vigie cu cotă gratuită',
   },
   overview: {
     title: 'Prezentare generală',
@@ -44,6 +44,15 @@ const translation = {
         webDescTip: 'Acest text va fi afișat pe partea clientului, oferind îndrumare de bază privind modul de utilizare a aplicației',
         webDescPlaceholder: 'Introduceți descrierea aplicației web',
         language: 'Limbă',
+        workflow: {
+          title: 'Pași flux de lucru',
+          show: 'Afișați',
+          hide: 'Ascundeți',
+        },
+        chatColorTheme: 'Tema de culoare a chatului',
+        chatColorThemeDesc: 'Setați tema de culoare a chatbotului',
+        chatColorThemeInverted: 'Inversat',
+        invalidHexMessage: 'Valoare hex nevalidă',
         more: {
           entry: 'Afișați mai multe setări',
           copyright: 'Drepturi de autor',
@@ -59,7 +68,7 @@ const translation = {
         explanation: 'Alegeți modul de încorporare a aplicației de chat pe site-ul web',
         iframe: 'Pentru a adăuga aplicația de chat oriunde pe site-ul web, adăugați acest iframe la codul HTML.',
         scripts: 'Pentru a adăuga o aplicație de chat în colțul din dreapta jos al site-ului web, adăugați acest cod la codul HTML.',
-        chromePlugin: 'Instalați extensia Chrome Dify Chatbot',
+        chromePlugin: 'Instalați extensia Chrome Vigie Chatbot',
         copied: 'Copiat',
         copy: 'Copiați',
       },

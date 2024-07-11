@@ -1,7 +1,7 @@
 const translation = {
   title: 'Tools',
   createCustomTool: 'Create Custom Tool',
-  customToolTip: 'Learn more about Dify custom tools',
+  customToolTip: 'Learn more about Vigie custom tools',
   type: {
     all: 'All',
     builtIn: 'Built-in',
@@ -105,6 +105,8 @@ const translation = {
     customDisclaimerPlaceholder: 'Please enter custom disclaimer',
     confirmTitle: 'Confirm to save ?',
     confirmTip: 'Apps using this tool will be affected',
+    deleteToolConfirmTitle: 'Delete this Tool?',
+    deleteToolConfirmContent: 'Deleting the Tool is irreversible. Users will no longer be able to access your Tool.',
   },
   test: {
     title: 'Test',

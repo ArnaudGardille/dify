@@ -8,7 +8,7 @@ setup(
     version="0.1.10",
     author="Dify",
     author_email="hello@dify.ai",
-    description="A package for interacting with the Dify Service-API",
+    description="A package for interacting with the Vigie Service-API",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/langgenius/dify",

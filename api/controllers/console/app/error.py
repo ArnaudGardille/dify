@@ -16,7 +16,7 @@ class ProviderNotInitializeError(BaseHTTPException):
 
 class ProviderQuotaExceededError(BaseHTTPException):
     error_code = 'provider_quota_exceeded'
-    description = "Your quota for Dify Hosted Model Provider has been exhausted. " \
+    description = "Your quota for Vigie Hosted Model Provider has been exhausted. " \
                   "Please go to Settings -> Model Provider to complete your own provider credentials."
     code = 400
 
@@ -96,4 +96,22 @@ class DraftWorkflowNotExist(BaseHTTPException):
 class DraftWorkflowNotSync(BaseHTTPException):
     error_code = 'draft_workflow_not_sync'
     description = "Workflow graph might have been modified, please refresh and resubmit."
+    code = 400
+
+
+class TracingConfigNotExist(BaseHTTPException):
+    error_code = 'trace_config_not_exist'
+    description = "Trace config not exist."
+    code = 400
+
+
+class TracingConfigIsExist(BaseHTTPException):
+    error_code = 'trace_config_is_exist'
+    description = "Trace config is exist."
+    code = 400
+
+
+class TracingConfigCheckError(BaseHTTPException):
+    error_code = 'trace_config_check_error'
+    description = "Invalid Credentials."
     code = 400

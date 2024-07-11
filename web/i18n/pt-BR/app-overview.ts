@@ -25,7 +25,7 @@ const translation = {
     callTimes: 'Número de chamadas',
     usedToken: 'Tokens usados',
     setAPIBtn: 'Ir para configurar o provedor de modelo',
-    tryCloud: 'Ou experimente a versão em nuvem do Dify com cota gratuita',
+    tryCloud: 'Ou experimente a versão em nuvem do Vigie com cota gratuita',
   },
   overview: {
     title: 'Visão Geral',
@@ -44,6 +44,15 @@ const translation = {
         webDescTip: 'Este texto será exibido no lado do cliente, fornecendo orientações básicas sobre como usar o aplicativo',
         webDescPlaceholder: 'Insira a descrição do WebApp',
         language: 'Idioma',
+        workflow: {
+          title: 'Etapas do fluxo de trabalho',
+          show: 'Mostrar',
+          hide: 'Ocultar',
+        },
+        chatColorTheme: 'Tema de cor do chatbot',
+        chatColorThemeDesc: 'Defina o tema de cor do chatbot',
+        chatColorThemeInverted: 'Inve',
+        invalidHexMessage: 'Valor hex inválido',
         more: {
           entry: 'Mostrar mais configurações',
           copyright: 'Direitos autorais',
@@ -62,7 +71,7 @@ const translation = {
         explanation: 'Escolha a maneira de incorporar o aplicativo de chat ao seu site',
         iframe: 'Para adicionar o aplicativo de chat em qualquer lugar do seu site, adicione este iframe ao seu código HTML.',
         scripts: 'Para adicionar um aplicativo de chat no canto inferior direito do seu site, adicione este código ao seu HTML.',
-        chromePlugin: 'Instalar a Extensão do Chrome Dify Chatbot',
+        chromePlugin: 'Instalar a Extensão do Chrome Vigie Chatbot',
         copied: 'Copiado',
         copy: 'Copiar',
       },

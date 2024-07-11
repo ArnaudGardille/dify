@@ -8,10 +8,11 @@ const translation = {
   deleteDatasetConfirmTitle: 'Delete this Knowledge?',
   deleteDatasetConfirmContent:
     'Deleting the Knowledge is irreversible. Users will no longer be able to access your Knowledge, and all prompt configurations and logs will be permanently deleted.',
+  datasetUsedByApp: 'The knowledge is being used by some apps. Apps will no longer be able to use this Knowledge, and all prompt configurations and logs will be permanently deleted.',
   datasetDeleted: 'Knowledge deleted',
   datasetDeleteFailed: 'Failed to delete Knowledge',
   didYouKnow: 'Did you know?',
-  intro1: 'The Knowledge can be integrated into the Dify application ',
+  intro1: 'The Knowledge can be integrated into the Vigie application ',
   intro2: 'as a context',
   intro3: ',',
   intro4: 'or it ',

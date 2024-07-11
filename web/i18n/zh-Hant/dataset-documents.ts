@@ -1,7 +1,7 @@
 const translation = {
   list: {
     title: '文件',
-    desc: '知識庫的所有檔案都在這裡顯示，整個知識庫都可以連結到 Dify 引用或透過 Chat 外掛進行索引。',
+    desc: '知識庫的所有檔案都在這裡顯示，整個知識庫都可以連結到 Vigie 引用或透過 Chat 外掛進行索引。',
     addFile: '新增檔案',
     addPages: '新增頁面',
     table: {
