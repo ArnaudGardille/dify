@@ -106,7 +106,7 @@ class FileUploadConfig(BaseSettings):
     """
     UPLOAD_FILE_SIZE_LIMIT: NonNegativeInt = Field(
         description='size limit in Megabytes for uploading files',
-        default=15,
+        default=150,
     )
 
     UPLOAD_FILE_BATCH_LIMIT: NonNegativeInt = Field(
