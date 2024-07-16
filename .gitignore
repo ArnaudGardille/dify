@@ -176,3 +176,6 @@ sdks/python-client/dify_client.egg-info
 pyrightconfig.json
 
 .idea/
+*.key
+*.cer
+*.lock
