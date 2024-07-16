@@ -104,7 +104,7 @@ export default function AppSelector({ isMobile }: IAppSelecotr) {
                       <div className={itemClassName} onClick={() => setShowAccountSettingModal({ payload: 'account' })}>
                         <div>{t('common.userProfile.settings')}</div>
                       </div>
-                    </Menu.Item>
+                    </Menu.Item> {/*
                     <Menu.Item>
                       <Link
                         className={classNames(itemClassName, 'group justify-between')}
@@ -146,8 +146,8 @@ export default function AppSelector({ isMobile }: IAppSelecotr) {
                           </div>
                         </Menu.Item>
                       )
-                    }
-                  </div>
+                    }*/}
+                  </div> 
                   <Menu.Item>
                     <div className='p-1' onClick={() => handleLogout()}>
                       <div

@@ -85,3 +85,14 @@ docker tag vigie-web myRegistryVigie/vigie/vigie-web
 
 docker push myRegistryVigie/vigie/vigie-api
 docker push myRegistryVigie/vigie/vigie-web
+
+
+docker cp management/add_tenant.py docker-api-1:/app/api/ # Or replace with /app/ if the app directory is directly under root
+docker exec -it docker-api-1 bash
+python api/add_tenant.py <account_id> --tenant_name "<new_tenant_name>" <role>
+python api/add_tenant.py <account_id> --tenant_name "<new_tenant_name>" <role>
+
+
+docker cp management/list_accounts.py docker-api-1:/app/api/
+
+docker cp management/. docker-api-1:/app/api/

@@ -59,7 +59,6 @@ const Header = () => {
           <Link href="/apps" className='flex items-center mr-4'>
             <LogoSite className='object-contain' />
           </Link>
-          <GithubStar />
         </>}
       </div>
       {isMobile && (
@@ -67,15 +66,14 @@ const Header = () => {
           <Link href="/apps" className='flex items-center mr-4'>
             <LogoSite />
           </Link>
-          <GithubStar />
         </div>
       )}
       {!isMobile && (
         <div className='flex items-center'>
-          {!isCurrentWorkspaceDatasetOperator && <ExploreNav className={navClassName} />}
+          {isCurrentWorkspaceEditor && <ExploreNav className={navClassName} />} 
           {!isCurrentWorkspaceDatasetOperator && <AppNav />}
           {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
-          {!isCurrentWorkspaceDatasetOperator && <ToolsNav className={navClassName} />}
+          {isCurrentWorkspaceEditor && <ToolsNav className={navClassName} />} 
         </div>
       )}
       <div className='flex items-center flex-shrink-0'>
@@ -91,10 +89,10 @@ const Header = () => {
       </div>
       {(isMobile && isShowNavMenu) && (
         <div className='w-full flex flex-col p-2 gap-y-1'>
-          {!isCurrentWorkspaceDatasetOperator && <ExploreNav className={navClassName} />}
+          {isCurrentWorkspaceEditor && <ExploreNav className={navClassName} />}
           {!isCurrentWorkspaceDatasetOperator && <AppNav />}
           {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
-          {!isCurrentWorkspaceDatasetOperator && <ToolsNav className={navClassName} />}
+          {isCurrentWorkspaceEditor && <ToolsNav className={navClassName} />}  
         </div>
       )}
     </div>
