@@ -1,3 +1,5 @@
+import { useStore as useAppStore } from '@/app/components/app/store'
+
 export const getRedirection = (
   isCurrentWorkspaceEditor: boolean,
   app: any,
