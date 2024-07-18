@@ -4,7 +4,9 @@ export const getRedirection = (
   redirectionFunc: (href: string) => void,
 ) => {
   if (!isCurrentWorkspaceEditor) {
-    redirectionFunc(`/app/${app.id}/overview`)
+    const appURL = `${app.mode}/${app.site.app_base_url}/${app.site.access_token}`
+
+    redirectionFunc(appURL)
   }
   else {
     if (app.mode === 'workflow' || app.mode === 'advanced-chat')
