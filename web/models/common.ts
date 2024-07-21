@@ -131,8 +131,8 @@ export type ICurrentWorkspace = Omit<IWorkspace, 'current'> & {
   in_trail: boolean
   trial_end_reason?: string
   custom_config?: {
-    remove_webapp_brand?: boolean
-    replace_webapp_logo?: string
+    remove_webapp_brand: true
+    replace_webapp_logo: true
   }
 }
 

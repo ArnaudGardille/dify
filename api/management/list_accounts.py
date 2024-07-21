@@ -1,8 +1,10 @@
 import argparse
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from models.account import Account, Tenant, TenantAccountJoin
+
 
 def list_accounts(db_url):
     """Lists account names, IDs, emails, and associated workspaces with IDs and roles."""

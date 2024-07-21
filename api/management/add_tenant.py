@@ -1,8 +1,10 @@
 import argparse
+
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from models.account import Account, Tenant, TenantAccountJoin, TenantAccountRole
+
 
 def create_tenant(name, db_url):
     """Creates a new tenant."""
