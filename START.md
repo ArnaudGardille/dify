@@ -96,3 +96,14 @@ python api/add_tenant.py <account_id> --tenant_name "<new_tenant_name>" <role>
 docker cp management/list_accounts.py docker-api-1:/app/api/
 
 docker cp management/. docker-api-1:/app/api/
+
+
+
+# List your docker containers
+docker ps
+
+# Connect to PostgreSQL container
+docker exec -it <postgres-container-id> bash
+
+# Connect to the PostgreSQL database
+psql -U postgres -d dify
