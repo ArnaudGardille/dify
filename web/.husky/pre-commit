@@ -21,6 +21,7 @@ do
 done
 
 # run linters based on the modified modules
+api_modified=false
 
 if $api_modified; then
     echo "Running Ruff linter on api module"
@@ -53,3 +54,5 @@ if $web_modified; then
     npx lint-staged
     cd ../
 fi
+
+export PATH="$HOME/.local/bin:$PATH"
