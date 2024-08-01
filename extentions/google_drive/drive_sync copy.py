@@ -14,11 +14,15 @@ import mimetypes
 from googleapiclient.http import MediaIoBaseDownload
 import docx2txt 
 
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Configuration for Dify API
-DIFY_API_URL = 'http://my.vigie.ai/v1'
-DIFY_API_KEY = 'dataset-eWoK4OqxwncqWQfmPDpXcr9t'
-KNOWLEDGE_NAME = 'Google Drive'
+DIFY_API_URL = os.getenv('DIFY_API_URL')
+DIFY_API_KEY = os.getenv('DIFY_API_KEY')
+KNOWLEDGE_NAME = os.getenv('KNOWLEDGE_NAME')
 
 # If modifying these scopes, delete the file token.json.
 SCOPES = [

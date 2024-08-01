@@ -179,6 +179,7 @@ pyrightconfig.json
 *.key
 *.cer
 *.lock
+*.ipynb
 
 
 credentials.json

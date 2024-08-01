@@ -59,11 +59,11 @@ const ProviderContext = createContext<ProviderContextState>({
     },
   },
   isFetchedPlan: false,
-  enableBilling: false,
+  enableBilling: true,
   onPlanInfoChanged: () => { },
-  enableReplaceWebAppLogo: false,
-  modelLoadBalancingEnabled: false,
-  datasetOperatorEnabled: false,
+  enableReplaceWebAppLogo: true,
+  modelLoadBalancingEnabled: true,
+  datasetOperatorEnabled: true,
 })
 
 export const useProviderContext = () => useContext(ProviderContext)
