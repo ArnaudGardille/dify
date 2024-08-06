@@ -179,3 +179,7 @@ pyrightconfig.json
 *.key
 *.cer
 *.lock
+cmd
+extentions/google_drive/credentials.json
+extentions/google_drive/token.json
+extentions/Wimi/test.ipynb
