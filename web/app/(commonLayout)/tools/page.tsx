@@ -15,12 +15,12 @@ const Layout: FC = () => {
     document.title = `${t('tools.title')} - Vigie`
     if (isCurrentWorkspaceDatasetOperator)
       return router.replace('/datasets')
-  }, [])
+  }, [isCurrentWorkspaceDatasetOperator, router, t])
 
   useEffect(() => {
     if (isCurrentWorkspaceDatasetOperator)
       return router.replace('/datasets')
-  }, [isCurrentWorkspaceDatasetOperator])
+  }, [isCurrentWorkspaceDatasetOperator, router])
 
   return <ToolProviderList />
 }
