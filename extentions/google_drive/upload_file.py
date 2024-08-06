@@ -1,10 +1,13 @@
 import json
 import requests
 import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 # Define the URL and headers
-url = 'http://my.vigie.ai/v1/datasets/ef576515-ad95-4811-aaa9-d32e450faeb0/document/create_by_file'
+url = os.getenv('DATASET_URL')
 headers = {
     'Authorization': os.getenv('VIGIE_KNOWLEDGE_API_SECRET')
 }
