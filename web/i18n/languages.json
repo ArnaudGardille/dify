@@ -75,7 +75,7 @@
       "name": "Italiano (Italia)",
       "prompt_name": "Italian",
       "example": "Ciao, Dify!",
-      "supported": false
+      "supported": true
     },
     {
       "value": "th-TH",
@@ -124,6 +124,13 @@
       "name": "Hindi (India)",
       "prompt_name": "Hindi",
       "example": "नमस्ते, Dify!",
+      "supported": "true"
+    },
+    {
+      "value": "tr-TR",
+      "name": "Türkçe",
+      "prompt_name": "Türkçe",
+      "example": "Selam!",
       "supported": "true"
     }
   ]
