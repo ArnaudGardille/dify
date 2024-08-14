@@ -78,6 +78,10 @@ provider_credential_schema:
           label:
             en_US: Asia Pacific (Sydney)
             zh_Hans: 亚太地区 (悉尼)
+        - value: eu-west-3
+          label:
+            en_US: Europe (Paris)
+            zh_Hans: 亚太地区 (悉尼)
     - variable: model_for_validation
       required: false
       label:
