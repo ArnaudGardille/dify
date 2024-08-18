@@ -1,0 +1,115 @@
+identity:
+  name: get_event_list
+  author: Vigie
+  label:
+    en_US: Get Event List
+    fr_FR: Obtenir la liste des événements
+description:
+  human:
+    en_US: Retrieve a list of calendar events.
+    fr_FR: Obtenir une liste d'événements de calendrier.
+  llm: Retrieve a list of calendar events.
+parameters:
+  - name: start_date
+    type: string
+    required: false
+    label:
+      en_US: Start Date
+      fr_FR: Date de début
+    human_description:
+      en_US: The start date for filtering events.
+      fr_FR: La date de début pour filtrer les événements.
+    llm_description: The start date for filtering events.
+    form: form
+  - name: end_date
+    type: string
+    required: false
+    label:
+      en_US: End Date
+      fr_FR: Date de fin
+    human_description:
+      en_US: The end date for filtering events.
+      fr_FR: La date de fin pour filtrer les événements.
+    llm_description: The end date for filtering events.
+    form: form
+  - name: filters
+    type: list
+    required: false
+    label:
+      en_US: Filters
+      fr_FR: Filtres
+    human_description:
+      en_US: List of filters for the events.
+      fr_FR: Liste de filtres pour les événements.
+    llm_description: List of filters for the events.
+    form: form
+  - name: view_busy
+    type: boolean
+    required: false
+    default: true
+    label:
+      en_US: View Busy Events
+      fr_FR: Voir les événements occupés
+    human_description:
+      en_US: Whether to view busy events.
+      fr_FR: Si vous souhaitez voir les événements occupés.
+    llm_description: Whether to view busy events.
+    form: form
+  - name: busy_user_id_list
+    type: list
+    required: false
+    label:
+      en_US: Busy User ID List
+      fr_FR: Liste des ID utilisateur occupés
+    human_description:
+      en_US: List of user IDs for viewing busy events.
+      fr_FR: Liste des ID utilisateur pour voir les événements occupés.
+    llm_description: List of user IDs for viewing busy events.
+    form: form
+  - name: view_empty_events
+    type: boolean
+    required: false
+    default: true
+    label:
+      en_US: View Empty Events
+      fr_FR: Voir les événements vides
+    human_description:
+      en_US: Whether to view empty events.
+      fr_FR: Si vous souhaitez voir les événements vides.
+    llm_description: Whether to view empty events.
+    form: form
+  - name: calendar_event_id_list
+    type: list
+    required: false
+    label:
+      en_US: Calendar Event ID List
+      fr_FR: Liste des ID d'événements de calendrier
+    human_description:
+      en_US: List of calendar event IDs to retrieve.
+      fr_FR: Liste des ID d'événements de calendrier à récupérer.
+    llm_description: List of calendar event IDs to retrieve.
+    form: form
+  - name: gen_rec_occurrences
+    type: boolean
+    required: false
+    default: true
+    label:
+      en_US: Generate Recurring Occurrences
+      fr_FR: Générer des occurrences récurrentes
+    human_description:
+      en_US: Whether to generate recurring occurrences of events.
+      fr_FR: Si vous souhaitez générer des occurrences récurrentes d'événements.
+    llm_description: Whether to generate recurring occurrences of events.
+    form: form
+  - name: modified_after
+    type: integer
+    required: false
+    default: 0
+    label:
+      en_US: Modified After Timestamp
+      fr_FR: Modifié après le timestamp
+    human_description:
+      en_US: Retrieve events modified after this timestamp.
+      fr_FR: Récupérer les événements modifiés après ce timestamp.
+    llm_description: Retrieve events modified after this timestamp.
+    form: form

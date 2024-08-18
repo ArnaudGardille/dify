@@ -1,0 +1,34 @@
+identity:
+  name: create_event
+  author: Vigie
+  label:
+    en_US: Create Event
+    fr_FR: Créer un événement
+description:
+  human:
+    en_US: Create a calendar event.
+    fr_FR: Créer un événement de calendrier.
+  llm: Create a calendar event.
+parameters:
+  - name: title
+    type: string
+    required: true
+    label:
+      en_US: Title
+      fr_FR: Titre
+    human_description:
+      en_US: The title of the event.
+      fr_FR: Le titre de l'événement.
+    llm_description: The title of the event.
+    form: form
+  - name: date_time
+    type: string
+    required: true
+    label:
+      en_US: Date and Time
+      fr_FR: Date et Heure
+    human_description:
+      en_US: The date and time of the event.
+      fr_FR: La date et l'heure de l'événement.
+    llm_description: The date and time of the event.
+    form: form
