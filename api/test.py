@@ -1,38 +1,60 @@
-from core.tools.provider.builtin.wimi.tools.authenticate import AuthenticateTool
-import os
-from dotenv import load_dotenv
-from datetime import datetime
-from pprint import pprint
+from app import app, db  # Import your Flask app
+from models.account import Tenant
+from services.account_service import TenantService, AccountService
 
-load_dotenv('wimi.env')
-class MockRuntime:
-    def __init__(self):
-        self.credentials = {
-            'wimi_api_url': os.getenv('WIMI_API_URL'),
-            'wimi_account_id': os.getenv('WIMI_ACCOUNT_ID'),
-            'wimi_login': os.getenv('WIMI_LOGIN'),
-            'wimi_password': os.getenv('WIMI_PASSWORD'),
-            'wimi_api_key': os.getenv('WIMI_API_KEY'),
-            'wimi_project_name': os.getenv('WIMI_PROJECT_NAME')
-        }
+user_email = "arnaud.gardille@vigie.ai"
+user_password = "Dechiktorren92"
 
-def test_authenticate_tool():
-    # Set up the mock runtime with environment credentials
-    runtime = MockRuntime()
+def print_attributes(obj):
+    """Prints the attributes and their values of any object."""
+    for attribute in dir(obj):
+        # Skip built-in attributes
+        if not attribute.startswith('__'):
+            value = getattr(obj, attribute)
+            print(f"{attribute}: {value}")
+            
+with app.app_context():
     
-    # Initialize the AuthenticateTool with the mock runtime
-    authenticate_tool = AuthenticateTool()
-    authenticate_tool.runtime = runtime
-    
-    # Invoke the tool with test parameters (user_id is not used in this example)
-    result = authenticate_tool._invoke(user_id=None, tool_parameters={})
-    
-    print(result.type)
-    print(type(result.message))
-    print(result.message)
-    # Print out the results for verification
-    print("Token:", result.message["token"])
-    print("Project ID:", result.message["project_id"])
+    db.session.delete(tenant)
+    db.session.commit()
+        
+    if False:
+        # Start a new session
+        session = db.session
 
-if __name__ == "__main__":
-    test_authenticate_tool()
+        # Query for the tenant you are interested in
+        tenants = session.query(Tenant).all()
+        print("\nWorkspaces: \n")
+        for tenant in tenants:
+            print_attributes(tenant)
+            print("\n")
+
+        tenant = session.query(Tenant).first()
+        
+        session.commit()
+        
+    
+    # Authenticate the main user
+    try:
+        account = AccountService.authenticate(email=user_email, password=user_password)
+    except Exception as e:
+        print(f"Authentication failed: {e}")
+        exit(1)
+
+    # Create a new tenant
+    try:
+        tenant_name = f"{account.name}'s Workspace"
+        tenant = TenantService.create_tenant(name=tenant_name)
+        print(f"Tenant '{tenant_name}' created successfully.")
+    except Exception as e:
+        print(f"Failed to create tenant: {e}")
+        exit(1)
+
+    # Add the authenticated user to the newly created tenant as an owner
+    try:
+        TenantService.create_tenant_member(tenant=tenant, account=account, role='owner')
+        account.current_tenant = tenant
+        db.session.commit()
+        print(f"User '{account.email}' added to tenant '{tenant_name}' as an owner.")
+    except Exception as e:
+        print(f"Failed to add user to tenant: {e}")
