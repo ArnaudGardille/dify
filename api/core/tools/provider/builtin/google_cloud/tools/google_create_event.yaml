@@ -1,0 +1,112 @@
+identity:
+  name: google_create_event
+  author: Vigie
+  label:
+    en_US: Create Google Calendar Event
+    fr_FR: Créer un événement dans le calendrier Google
+description:
+  human:
+    en_US: Create an event in your Google Calendar.
+    fr_FR: Créez un événement dans votre calendrier Google.
+  llm: Create an event in your Google Calendar.
+parameters:
+  - name: summary
+    type: string
+    required: true
+    label:
+      en_US: Event Summary
+      fr_FR: Résumé de l'événement
+    human_description:
+      en_US: The summary or title of the event.
+      fr_FR: Le résumé ou le titre de l'événement.
+    llm_description: The summary or title of the event.
+    form: form
+  - name: location
+    type: string
+    required: false
+    label:
+      en_US: Location
+      fr_FR: Emplacement
+    human_description:
+      en_US: The location of the event.
+      fr_FR: L'emplacement de l'événement.
+    llm_description: The location of the event.
+    form: form
+  - name: description
+    type: string
+    required: false
+    label:
+      en_US: Description
+      fr_FR: Description
+    human_description:
+      en_US: A description of the event.
+      fr_FR: Une description de l'événement.
+    llm_description: A description of the event.
+    form: form
+  - name: start_datetime
+    type: string
+    required: true
+    label:
+      en_US: Start DateTime
+      fr_FR: Date et heure de début
+    human_description:
+      en_US: The start date and time of the event (ISO format).
+      fr_FR: La date et l'heure de début de l'événement (format ISO).
+    llm_description: The start date and time of the event (ISO format).
+    form: form
+  - name: end_datetime
+    type: string
+    required: true
+    label:
+      en_US: End DateTime
+      fr_FR: Date et heure de fin
+    human_description:
+      en_US: The end date and time of the event (ISO format).
+      fr_FR: La date et l'heure de fin de l'événement (format ISO).
+    llm_description: The end date and time of the event (ISO format).
+    form: form
+  - name: timezone
+    type: string
+    required: false
+    default: UTC
+    label:
+      en_US: Timezone
+      fr_FR: Fuseau horaire
+    human_description:
+      en_US: The timezone of the event.
+      fr_FR: Le fuseau horaire de l'événement.
+    llm_description: The timezone of the event.
+    form: form
+  - name: attendees_emails
+    type: string
+    required: false
+    label:
+      en_US: Attendees Emails (Comma-separated)
+      fr_FR: Emails des participants (séparés par des virgules)
+    human_description:
+      en_US: Comma-separated list of attendee email addresses.
+      fr_FR: Liste des adresses email des participants, séparées par des virgules.
+    llm_description: Comma-separated list of attendee email addresses.
+    form: form
+  - name: recurrence
+    type: string
+    required: false
+    label:
+      en_US: Recurrence Rules (Comma-separated)
+      fr_FR: Règles de récurrence (séparées par des virgules)
+    human_description:
+      en_US: Comma-separated recurrence rules for the event.
+      fr_FR: Règles de récurrence pour l'événement, séparées par des virgules.
+    llm_description: Comma-separated recurrence rules for the event.
+    form: form
+  - name: reminders
+    type: string
+    required: false
+    label:
+      en_US: Reminders Overrides (JSON format)
+      fr_FR: Remplacements des rappels (format JSON)
+    human_description:
+      en_US: Custom reminders for the event in JSON format.
+      fr_FR: Rappels personnalisés pour l'événement au format JSON.
+    llm_description: Custom reminders for the event in JSON format.
+    form: form

@@ -1,0 +1,13 @@
+identity:
+  name: google_calendar_events
+  author: Vigie
+  label:
+    en_US: Google Calendar Events
+    fr_FR: Événements du calendrier Google
+description:
+  human:
+    en_US: Retrieve the next 10 events from your Google Calendar.
+    fr_FR: Récupérez les 10 prochains événements de votre calendrier Google.
+  llm: Retrieve the next 10 events from your Google Calendar.
+parameters:
+  # No additional parameters required for this tool

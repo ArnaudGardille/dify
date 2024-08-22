@@ -11,10 +11,10 @@ import DatasetNav from './dataset-nav'
 import EnvNav from './env-nav'
 import ExploreNav from './explore-nav'
 import ToolsNav from './tools-nav'
-import GithubStar from './github-star'
 import { WorkspaceProvider } from '@/context/workspace-context'
 import { useAppContext } from '@/context/app-context'
 import LogoSite from '@/app/components/base/logo/logo-site'
+import LogoDify from '@/app/components/base/logo/logo-dify'
 import useBreakpoints, { MediaType } from '@/hooks/use-breakpoints'
 import { useProviderContext } from '@/context/provider-context'
 import { useModalContext } from '@/context/modal-context'
@@ -59,6 +59,9 @@ const Header = () => {
           <Link href="/apps" className='flex items-center mr-4'>
             <LogoSite className='object-contain' />
           </Link>
+          <div className='flex items-center text-[10px] font-medium text-gray-400'>
+                POWERED BY  <LogoDify className='ml-2 block w-auto h-5' />
+          </div>
         </>}
       </div>
       {isMobile && (
@@ -70,10 +73,10 @@ const Header = () => {
       )}
       {!isMobile && (
         <div className='flex items-center'>
-          {isCurrentWorkspaceEditor && <ExploreNav className={navClassName} />} 
+          {isCurrentWorkspaceEditor && <ExploreNav className={navClassName} />}
           {!isCurrentWorkspaceDatasetOperator && <AppNav />}
           {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
-          {isCurrentWorkspaceEditor && <ToolsNav className={navClassName} />} 
+          {isCurrentWorkspaceEditor && <ToolsNav className={navClassName} />}
         </div>
       )}
       <div className='flex items-center flex-shrink-0'>
@@ -92,7 +95,7 @@ const Header = () => {
           {isCurrentWorkspaceEditor && <ExploreNav className={navClassName} />}
           {!isCurrentWorkspaceDatasetOperator && <AppNav />}
           {(isCurrentWorkspaceEditor || isCurrentWorkspaceDatasetOperator) && <DatasetNav />}
-          {isCurrentWorkspaceEditor && <ToolsNav className={navClassName} />}  
+          {isCurrentWorkspaceEditor && <ToolsNav className={navClassName} />}
         </div>
       )}
     </div>

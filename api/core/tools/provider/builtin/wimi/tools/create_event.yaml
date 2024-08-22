@@ -1,0 +1,78 @@
+identity:
+  name: create_event
+  author: Vigie
+  label:
+    en_US: Create Event
+    fr_FR: Créer un événement
+description:
+  human:
+    en_US: Create a calendar event.
+    fr_FR: Créer un événement de calendrier.
+  llm: Create a calendar event.
+parameters:
+  - name: title
+    type: string
+    required: true
+    label:
+      en_US: Title
+      fr_FR: Titre
+    human_description:
+      en_US: The title of the event.
+      fr_FR: Le titre de l'événement.
+    llm_description: The title of the event.
+    form: llm
+  - name: start_date
+    type: string
+    required: true
+    label:
+      en_US: Start Date and Time
+      fr_FR: Date et heure de début
+    human_description:
+      en_US: The start date and time of the event.
+      fr_FR: La date et l'heure de début de l'événement.
+    llm_description: The start date and time of the event.
+    form: llm
+  - name: end_date
+    type: string
+    required: true
+    label:
+      en_US: End Date and Time
+      fr_FR: Date et heure de fin
+    human_description:
+      en_US: The end date and time of the event.
+      fr_FR: La date et l'heure de fin de l'événement.
+    llm_description: The end date and time of the event.
+    form: llm
+  - name: description
+    type: string
+    required: false
+    label:
+      en_US: Description
+      fr_FR: Description
+    human_description:
+      en_US: The description of the event.
+      fr_FR: La description de l'événement.
+    llm_description: The description of the event.
+    form: llm
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token
+      fr_FR: Jeton
+    human_description:
+      en_US: The authentication token.
+      fr_FR: Le jeton d'authentification.
+    llm_description: The authentication token.
+    form: llm
+  - name: project_id
+    type: number
+    required: true
+    label:
+      en_US: Project ID
+      fr_FR: ID du projet
+    human_description:
+      en_US: The project ID.
+      fr_FR: L'ID du projet.
+    llm_description: The project ID.
+    form: llm

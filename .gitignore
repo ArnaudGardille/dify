@@ -182,6 +182,10 @@ api/.vscode
 *.cer
 *.lock
 cmd
-extentions/google_drive/credentials.json
-extentions/google_drive/token.json
-extentions/Wimi/test.ipynb
+token.json
+credentials.json
+wimi.env
+
+docker/volumes
+credentials.json
+token.json

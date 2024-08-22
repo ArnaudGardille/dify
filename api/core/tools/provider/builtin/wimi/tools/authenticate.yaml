@@ -1,0 +1,11 @@
+identity:
+  name: authenticate
+  author: Vigie
+  label:
+    en_US: Authenticate
+    fr_FR: Authentification
+description:
+  human:
+    en_US: Authenticate to retrieve the token and project ID.
+    fr_FR: Authentifiez-vous pour obtenir le jeton et l'ID du projet.
+  llm: Authenticate to retrieve the token and project ID.
