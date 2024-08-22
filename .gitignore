@@ -185,3 +185,4 @@ cmd
 extentions/google_drive/credentials.json
 extentions/google_drive/token.json
 extentions/Wimi/test.ipynb
+docker/volumes
