@@ -4,7 +4,7 @@
   <a href="https://cloud.dify.ai">Dify 클라우드</a> ·
   <a href="https://docs.dify.ai/getting-started/install-self-hosted">셀프-호스팅</a> ·
   <a href="https://docs.dify.ai">문서</a> ·
-  <a href="https://cal.com/guchenhe/60-min-meeting">기업 문의</a>
+  <a href="https://udify.app/chat/22L1zSxg6yW1cWQg">기업 문의 (영어만 가능)</a>
 </p>
 
 <p align="center">
@@ -35,8 +35,10 @@
   <a href="./README_ES.md"><img alt="README en Español" src="https://img.shields.io/badge/Español-d9d9d9"></a>
   <a href="./README_FR.md"><img alt="README en Français" src="https://img.shields.io/badge/Français-d9d9d9"></a>
   <a href="./README_KL.md"><img alt="README tlhIngan Hol" src="https://img.shields.io/badge/Klingon-d9d9d9"></a>
-  <a href="./README_KR.md"><img alt="한국어 README" src="https://img.shields.io/badge/한국어-d9d9d9"></a>
+  <a href="./README_KR.md"><img alt="README in Korean" src="https://img.shields.io/badge/한국어-d9d9d9"></a>
+  <a href="./README_AR.md"><img alt="README بالعربية" src="https://img.shields.io/badge/العربية-d9d9d9"></a>
   <a href="./README_TR.md"><img alt="Türkçe README" src="https://img.shields.io/badge/Türkçe-d9d9d9"></a>
+  <a href="./README_VI.md"><img alt="README Tiếng Việt" src="https://img.shields.io/badge/Ti%E1%BA%BFng%20Vi%E1%BB%87t-d9d9d9"></a>
 
 </p>
 
@@ -218,22 +220,6 @@ Dify를 Kubernetes에 배포하고 프리미엄 스케일링 설정을 구성했
 * [디스코드](https://discord.gg/FngNHpbcY7). 애플리케이션 공유 및 커뮤니티와 소통하기에 적합합니다.
 * [트위터](https://twitter.com/dify_ai). 애플리케이션 공유 및 커뮤니티와 소통하기에 적합합니다.
 
-또는 팀원과 직접 미팅을 예약하세요:
-
-<table>
-  <tr>
-    <th>연락처</th>
-    <th>목적</th>
-  </tr>
-  <tr>
-    <td><a href='https://cal.com/guchenhe/15min' target='_blank'><img class="schedule-button" src='https://github.com/langgenius/dify/assets/13230914/9ebcd111-1205-4d71-83d5-948d70b809f5' alt='Git-Hub-README-Button-3x' style="width: 180px; height: auto; object-fit: contain;"/></a></td>
-    <td>비즈니스 문의 및 제품 피드백</td>
-  </tr>
-  <tr>
-    <td><a href='https://cal.com/pinkbanana' target='_blank'><img class="schedule-button" src='https://github.com/langgenius/dify/assets/13230914/d1edd00a-d7e4-4513-be6c-e57038e143fd' alt='Git-Hub-README-Button-2x' style="width: 180px; height: auto; object-fit: contain;"/></a></td>
-    <td>기여, 이슈 및 기능 요청</td>
-  </tr>
-</table>
 
 ## Star 히스토리
 
