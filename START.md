@@ -64,3 +64,14 @@ sudo kill $(sudo lsof -t -i :80)
 ## Documentation
 
 Visit <https://docs.dify.ai/getting-started/readme> to view the full documentation.
+
+# List your docker containers
+docker ps
+
+# Connect to PostgreSQL container
+docker exec -it <postgres-container-id> bash
+
+# Connect to the PostgreSQL database
+psql -U postgres -d dify
+
+

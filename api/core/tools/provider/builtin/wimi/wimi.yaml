@@ -1,0 +1,81 @@
+identity:
+  author: Vigie
+  name: wimi
+  label:
+    en_US: Wimi
+    fr_FR: Wimi
+  description:
+    en_US: Wimi Tools Integration
+    fr_FR: Intégration des outils Wimi
+  icon: icon.svg # Make sure to place an appropriate icon in the _assets folder
+  tags:
+    - productivity
+credentials_for_provider:
+  wimi_api_key:
+    type: secret-input
+    required: true
+    label:
+      en_US: Wimi API key
+      fr_FR: Clé API Wimi
+    placeholder:
+      en_US: Enter your Wimi API key
+      fr_FR: Entrez votre clé API Wimi
+    help:
+      en_US: Obtain your API key from the Wimi account settings.
+      fr_FR: Obtenez votre clé API à partir des paramètres du compte Wimi.
+  wimi_account_id:
+    type: text-input
+    required: true
+    label:
+      en_US: Wimi Account ID
+      fr_FR: ID de compte Wimi
+    placeholder:
+      en_US: Enter your Wimi Account ID
+      fr_FR: Entrez votre ID de compte Wimi
+  wimi_user_id:
+    type: text-input
+    required: true
+    label:
+      en_US: Wimi User ID
+      fr_FR: ID utilisateur Wimi
+    placeholder:
+      en_US: Enter your Wimi User ID
+      fr_FR: Entrez votre ID utilisateur Wimi
+  wimi_login:
+    type: text-input
+    required: true
+    label:
+      en_US: Wimi Login
+      fr_FR: Connexion Wimi
+    placeholder:
+      en_US: Enter your Wimi login email
+      fr_FR: Entrez votre email de connexion Wimi
+  wimi_password:
+    type: text-input
+    required: true
+    label:
+      en_US: Wimi Password
+      fr_FR: Mot de passe Wimi
+    placeholder:
+      en_US: Enter your Wimi password
+      fr_FR: Entrez votre mot de passe Wimi
+  wimi_api_url:
+    type: text-input
+    required: true
+    default: "https://api.wimi.pro"
+    label:
+      en_US: Wimi API URL
+      fr_FR: URL de l'API Wimi
+    placeholder:
+      en_US: Enter the Wimi API URL
+      fr_FR: Entrez l'URL de l'API Wimi
+  wimi_project_name:
+    type: text-input
+    required: true
+    default: "General"
+    label:
+      en_US: Default Project Name
+      fr_FR: Nom du projet par défaut
+    placeholder:
+      en_US: Enter the default project name
+      fr_FR: Entrez le nom du projet par défaut

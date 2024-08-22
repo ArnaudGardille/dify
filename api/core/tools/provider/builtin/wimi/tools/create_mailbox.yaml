@@ -1,0 +1,23 @@
+identity:
+  name: create_mailbox
+  author: Vigie
+  label:
+    en_US: Create Mailbox
+    fr_FR: Créer une boîte aux lettres
+description:
+  human:
+    en_US: Create a mailbox on the main domain of the account.
+    fr_FR: Créer une boîte aux lettres sur le domaine principal du compte.
+  llm: Create a mailbox on the main domain of the account.
+parameters:
+  - name: email
+    type: string
+    required: true
+    label:
+      en_US: Email Address
+      fr_FR: Adresse e-mail
+    human_description:
+      en_US: The email address for the new mailbox.
+      fr_FR: L'adresse e-mail pour la nouvelle boîte aux lettres.
+    llm_description: The email address for the new mailbox.
+    form: form
