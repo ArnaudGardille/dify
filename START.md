@@ -74,4 +74,9 @@ docker exec -it <postgres-container-id> bash
 # Connect to the PostgreSQL database
 psql -U postgres -d dify
 
-
+az login
+az containerapp exec \                                               
+  --name api \
+  --resource-group rg-francecentral \
+  --container langgenius \   
+  --command "curl -o /app/add_tenant.py https://vigiestorage.file.core.windows.net/scripts/list_workspaces.py"
