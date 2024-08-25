@@ -15,13 +15,10 @@ class GetEventListTool(BuiltinTool):
     def _invoke(self, user_id, tool_parameters):
         start_date = tool_parameters.get('start_date')
         end_date = tool_parameters.get('end_date')
-        filters = tool_parameters.get('filters', [])
         view_busy = tool_parameters.get('view_busy', True)
-        busy_user_id_list = tool_parameters.get('busy_user_id_list', [])
         view_empty_events = tool_parameters.get('view_empty_events', True)
-        calendar_event_id_list = tool_parameters.get('calendar_event_id_list', [])
         gen_rec_occurrences = tool_parameters.get('gen_rec_occurrences', True)
-        modified_after = tool_parameters.get('modified_after', 0)
+        modified_after = tool_parameters.get('modified_after', " 2000-01-01 00:00:00")
 
         credentials = self.runtime.credentials
 
@@ -40,22 +37,16 @@ class GetEventListTool(BuiltinTool):
             },
             "body": {
                 "data": {
-                    "start_date": "2016-11-27 17:10:05",
-                    "end_date": "2024-11-27 17:10:05",
+                    "start_date": start_date,
+                    "end_date": end_date,
                     "view_busy": False,
                     "view_empty_events": True,
                     "gen_rec_occurrences": True,
-        }
-                    #"start_date": start_date,
-                    #"end_date": end_date,
-                    #"filters": filters,
-                    #"view_busy": view_busy,
-                    #"busy_user_id_list": busy_user_id_list,
-                    #"view_empty_events": view_empty_events,
-                    #"calendar_event_id_list": calendar_event_id_list,
-                    #"gen_rec_occurrences": gen_rec_occurrences,
-                    #"modified_after": modified_after
-                #}
+                    "view_busy": view_busy,
+                    "view_empty_events": view_empty_events,
+                    "gen_rec_occurrences": gen_rec_occurrences,
+                    "modified_after": modified_after
+                }
             }
         }
         print("payload")

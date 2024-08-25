@@ -12,7 +12,7 @@ description:
 parameters:
   - name: start_date
     type: string
-    required: false
+    required: true
     label:
       en_US: Start Date
       fr_FR: Date de début
@@ -21,9 +21,10 @@ parameters:
       fr_FR: La date de début pour filtrer les événements.
     llm_description: The start date for filtering events.
     form: form
+    default: "2023-08-23 06:30:00"
   - name: end_date
     type: string
-    required: false
+    required: true
     label:
       en_US: End Date
       fr_FR: Date de fin
@@ -32,17 +33,7 @@ parameters:
       fr_FR: La date de fin pour filtrer les événements.
     llm_description: The end date for filtering events.
     form: form
-  - name: filters
-    type: list
-    required: false
-    label:
-      en_US: Filters
-      fr_FR: Filtres
-    human_description:
-      en_US: List of filters for the events.
-      fr_FR: Liste de filtres pour les événements.
-    llm_description: List of filters for the events.
-    form: form
+    default: "2025-08-23 06:30:00"
   - name: view_busy
     type: boolean
     required: false
@@ -55,17 +46,6 @@ parameters:
       fr_FR: Si vous souhaitez voir les événements occupés.
     llm_description: Whether to view busy events.
     form: form
-  - name: busy_user_id_list
-    type: list
-    required: false
-    label:
-      en_US: Busy User ID List
-      fr_FR: Liste des ID utilisateur occupés
-    human_description:
-      en_US: List of user IDs for viewing busy events.
-      fr_FR: Liste des ID utilisateur pour voir les événements occupés.
-    llm_description: List of user IDs for viewing busy events.
-    form: form
   - name: view_empty_events
     type: boolean
     required: false
@@ -77,17 +57,6 @@ parameters:
       en_US: Whether to view empty events.
       fr_FR: Si vous souhaitez voir les événements vides.
     llm_description: Whether to view empty events.
-    form: form
-  - name: calendar_event_id_list
-    type: list
-    required: false
-    label:
-      en_US: Calendar Event ID List
-      fr_FR: Liste des ID d'événements de calendrier
-    human_description:
-      en_US: List of calendar event IDs to retrieve.
-      fr_FR: Liste des ID d'événements de calendrier à récupérer.
-    llm_description: List of calendar event IDs to retrieve.
     form: form
   - name: gen_rec_occurrences
     type: boolean
@@ -102,9 +71,8 @@ parameters:
     llm_description: Whether to generate recurring occurrences of events.
     form: form
   - name: modified_after
-    type: integer
+    type: string
     required: false
-    default: 0
     label:
       en_US: Modified After Timestamp
       fr_FR: Modifié après le timestamp

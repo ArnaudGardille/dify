@@ -80,3 +80,9 @@ az containerapp exec \
   --resource-group rg-francecentral \
   --container langgenius \   
   --command "curl -o /app/add_tenant.py https://vigiestorage.file.core.windows.net/scripts/list_workspaces.py"
+
+az containerapp exec \
+  --name api \
+  --resource-group rg-francecentral \
+  --container langgenius \
+  --command "bash"

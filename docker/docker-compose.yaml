@@ -192,7 +192,7 @@ services:
   api:
     #image: langgenius/dify-api:0.7.1
     #image: arnaudbg/vigie-api
-    image: vigie-api:0.7.1
+    image: vigie-api:latest
     restart: always
     environment:
       # Use the shared environment variables.
@@ -214,7 +214,7 @@ services:
   worker:
     #image: langgenius/dify-api:0.7.1
     #image: arnaudbg/vigie-api
-    image: vigie-api:0.7.1
+    image: vigie-api:latest
     restart: always
     environment:
       # Use the shared environment variables.
@@ -236,7 +236,7 @@ services:
     #image: langgenius/dify-web:0.6.13
     #image: arnaudbg/vigie-web
     #image: langgenius/dify-web:0.7.1
-    image: vigie-web:0.7.1
+    image: vigie-web:latest
     restart: always
     environment:
       CONSOLE_API_URL: ${CONSOLE_API_URL:-}

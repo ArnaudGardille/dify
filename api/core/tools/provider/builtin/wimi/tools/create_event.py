@@ -31,12 +31,15 @@ class CreateEventTool(BuiltinTool):
             },
             "body": {
                 "data": {
-                    "event": {
-                        "title": title,
-                        "start_date": start_date,
-                        "end_date": end_date,
-                        "description": description,
-                    }
+                    "title": title,
+                    "start_date": start_date,
+                    "end_date": end_date,
+                    "description": description,
+                    "location": "",
+                    "all_day": False,
+                    "users": [],
+                    "timezone": "Europe/Paris",
+                    "is_public": True
                 }
             }
         }

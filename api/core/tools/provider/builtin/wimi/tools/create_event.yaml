@@ -32,6 +32,7 @@ parameters:
       fr_FR: La date et l'heure de début de l'événement.
     llm_description: The start date and time of the event.
     form: llm
+    default: "2024-08-23 06:30:00"
   - name: end_date
     type: string
     required: true
@@ -43,6 +44,7 @@ parameters:
       fr_FR: La date et l'heure de fin de l'événement.
     llm_description: The end date and time of the event.
     form: llm
+    default: "2024-08-23 07:30:00"
   - name: description
     type: string
     required: false
