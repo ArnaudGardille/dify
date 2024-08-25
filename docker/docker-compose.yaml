@@ -659,16 +659,17 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-
-  # unstructured .
-  # (if used, you need to set ETL_TYPE to Unstructured in the api & worker service.)
-  unstructured:
-    image: downloads.unstructured.io/unstructured-io/unstructured-api:latest
-    profiles:
-      - unstructured
-    restart: always
-    volumes:
-      - ./volumes/unstructured:/app/data
+      
+    # unstructured .
+    #unstructured:
+    #  image: downloads.unstructured.io/unstructured-io/unstructured-api:latest
+    #  profiles:
+    #    - unstructured
+    #  restart: always
+    #  ports:
+    #    - "8000:8000"
+    #  volumes:
+    #    - ./volumes/unstructured:/app/data
 
 networks:
   # create a network between sandbox, api and ssrf_proxy, and can not access outside.
