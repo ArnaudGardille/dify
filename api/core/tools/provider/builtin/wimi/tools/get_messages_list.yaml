@@ -1,0 +1,23 @@
+identity:
+  name: get_chat_list
+  author: Vigie
+  label:
+    en_US: Get Chat List
+    fr_FR: Obtenir la liste des chats
+description:
+  human:
+    en_US: Retrieve a list of chats.
+    fr_FR: Obtenir une liste de chats.
+  llm: Retrieve a list of chats.
+parameters:
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token
+      fr_FR: Jeton
+    human_description:
+      en_US: The authentication token.
+      fr_FR: Le jeton d'authentification.
+    llm_description: The authentication token.
+    form: llm

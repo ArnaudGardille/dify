@@ -48,10 +48,8 @@ class AuthenticateTool(BuiltinTool):
 
         if response.status_code != 200 or 'body' not in response.json():
             raise Exception("Authentication failed.")
-        print(response.json())
         auth_response = response.json()
         token = auth_response['header']['token']
         project_id = get_project_id_by_name(auth_response['body']['data']['projects'], credentials['wimi_project_name'])
-        print("Authentication succeeded.")
         
         return self.create_json_message({"token": token, "project_id": project_id})

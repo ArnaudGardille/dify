@@ -1,0 +1,103 @@
+identity:
+  name: create_task
+  author: Vigie
+  label:
+    en_US: Create Task
+    fr_FR: Créer une tâche
+description:
+  human:
+    en_US: Create a task.
+    fr_FR: Créer une tâche.
+  llm: Create a task.
+parameters:
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token
+      fr_FR: Jeton
+    human_description:
+      en_US: The authentication token.
+      fr_FR: Le jeton d'authentification.
+    llm_description: The authentication token.
+    form: llm
+  - name: label
+    type: string
+    required: true
+    label:
+      en_US: Label
+      fr_FR: Étiquette
+    human_description:
+      en_US: The label of the task.
+      fr_FR: L'étiquette de la tâche.
+    llm_description: The label of the task.
+    form: llm
+  - name: description
+    type: string
+    required: false
+    label:
+      en_US: Description
+      fr_FR: Description
+    human_description:
+      en_US: The description of the task.
+      fr_FR: La description de la tâche.
+    llm_description: The description of the task.
+    form: llm
+  - name: position
+    type: number
+    required: false
+    default: 0
+    label:
+      en_US: Position
+      fr_FR: Position
+    human_description:
+      en_US: The position of the task.
+      fr_FR: La position de la tâche.
+    llm_description: The position of the task.
+    form: llm
+  - name: status
+    type: number
+    required: false
+    default: 0
+    label:
+      en_US: Status
+      fr_FR: Statut
+    human_description:
+      en_US: The status of the task.
+      fr_FR: Le statut de la tâche.
+    llm_description: The status of the task.
+    form: llm
+  - name: due_date
+    type: string
+    required: false
+    label:
+      en_US: Due Date
+      fr_FR: Date d'échéance
+    human_description:
+      en_US: The due date of the task.
+      fr_FR: La date d'échéance de la tâche.
+    llm_description: The due date of the task.
+    form: llm
+  - name: owners
+    type: string
+    required: false
+    label:
+      en_US: Owners
+      fr_FR: Propriétaires
+    human_description:
+      en_US: The list of user IDs who own the task.
+      fr_FR: La liste des ID utilisateurs propriétaires de la tâche.
+    llm_description: The list of user IDs who own the task.
+    form: llm
+  - name: force_owners
+    type: boolean
+    required: false
+    default: false
+    label:
+      en_US: Force Owners
+      fr_FR: Forcer les propriétaires
+    human_description:
+      en_US: Whether to force assign owners to the task.
+      fr_FR: Si vous souhaitez forcer l'attribution des propriétaires à la tâche.
+    llm_description: Whether to force assign owners to the task.
+    form: llm

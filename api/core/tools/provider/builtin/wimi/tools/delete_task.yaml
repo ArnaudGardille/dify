@@ -1,0 +1,34 @@
+identity:
+  name: delete_task
+  author: Vigie
+  label:
+    en_US: Delete Task
+    fr_FR: Supprimer une tâche
+description:
+  human:
+    en_US: Delete a task.
+    fr_FR: Supprimer une tâche.
+  llm: Delete a task.
+parameters:
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token
+      fr_FR: Jeton
+    human_description:
+      en_US: The authentication token.
+      fr_FR: Le jeton d'authentification.
+    llm_description: The authentication token.
+    form: llm
+  - name: task_id
+    type: number
+    required: true
+    label:
+      en_US: Task ID
+      fr_FR: ID de la tâche
+    human_description:
+      en_US: The ID of the task to be deleted.
+      fr_FR: L'ID de la tâche à supprimer.
+    llm_description: The ID of the task to be deleted.
+    form: llm

@@ -1,7 +1,6 @@
 from core.tools.tool.builtin_tool import BuiltinTool
 from core.tools.entities.tool_entities import ToolInvokeMessage
 import requests, json, uuid
-from pprint import pprint
 
 class CreateEventTool(BuiltinTool):
     def _invoke(self, user_id, tool_parameters):
@@ -9,10 +8,6 @@ class CreateEventTool(BuiltinTool):
         start_date = tool_parameters['start_date']
         end_date = tool_parameters['end_date']
         description = tool_parameters.get('description', '')
-
-        # Retrieve token and project_id from the tool parameters
-        token = tool_parameters['token']
-        project_id = tool_parameters['project_id']
 
         credentials = self.runtime.credentials
 
@@ -22,11 +17,11 @@ class CreateEventTool(BuiltinTool):
                 "api_version": "1.2",
                 "app_token": credentials['wimi_api_key'],
                 "msg_key": f"calendar.event.Create.{str(uuid.uuid4())}",  # Unique message key
-                "token": token,
+                "token": tool_parameters['token'],
                 "identification": {
-                    "account_id": credentials['wimi_account_id'],
-                    "user_id": credentials['wimi_user_id'],
-                    "project_id": project_id,
+                    "account_id": int(credentials['wimi_account_id']),
+                    "user_id": int(credentials['wimi_user_id']),
+                    "project_id": int(tool_parameters['project_id']),
                 }
             },
             "body": {
@@ -43,12 +38,20 @@ class CreateEventTool(BuiltinTool):
                 }
             }
         }
-        pprint(payload)
         
         headers = {'Content-Type': 'application/json'}
         response = requests.post(credentials['wimi_api_url'], headers=headers, data=json.dumps(payload))
         
-        pprint(response.json())
+        if 'error' in response.json()['body']:
+            return self.create_text_message(text=response.text+'\n\n'+str(payload))
+            
+        return self.create_text_message(text=f"Event '{title}' created successfully.")
+
+        
+        
+        
+        return self.create_json_message({"token": token, "project_id": project_id})
+        
         if response.status_code == 200:
             return self.create_text_message(text=f"Event '{title}' created successfully.")
         else:

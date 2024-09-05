@@ -1,0 +1,34 @@
+identity:
+  name: delete_meeting
+  author: Vigie
+  label:
+    en_US: Delete Meeting
+    fr_FR: Supprimer une réunion
+description:
+  human:
+    en_US: Delete a meeting.
+    fr_FR: Supprimer une réunion.
+  llm: Delete a meeting.
+parameters:
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token
+      fr_FR: Jeton
+    human_description:
+      en_US: The authentication token.
+      fr_FR: Le jeton d'authentification.
+    llm_description: The authentication token.
+    form: llm
+  - name: meeting_id
+    type: number
+    required: true
+    label:
+      en_US: Meeting ID
+      fr_FR: ID de la réunion
+    human_description:
+      en_US: The ID of the meeting to be deleted.
+      fr_FR: L'ID de la réunion à supprimer.
+    llm_description: The ID of the meeting to be deleted.
+    form: llm

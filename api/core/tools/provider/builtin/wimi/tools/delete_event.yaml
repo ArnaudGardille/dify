@@ -1,0 +1,34 @@
+identity:
+  name: remove_calendar_event
+  author: Vigie
+  label:
+    en_US: Remove Calendar Event
+    fr_FR: Supprimer un événement de calendrier
+description:
+  human:
+    en_US: Delete a calendar event.
+    fr_FR: Supprimer un événement de calendrier.
+  llm: Delete a calendar event.
+parameters:
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token
+      fr_FR: Jeton
+    human_description:
+      en_US: The authentication token.
+      fr_FR: Le jeton d'authentification.
+    llm_description: The authentication token.
+    form: llm
+  - name: calendar_event_id
+    type: number
+    required: true
+    label:
+      en_US: Calendar Event ID
+      fr_FR: ID de l'événement de calendrier
+    human_description:
+      en_US: The ID of the calendar event to be deleted.
+      fr_FR: L'ID de l'événement de calendrier à supprimer.
+    llm_description: The ID of the calendar event to be deleted.
+    form: llm

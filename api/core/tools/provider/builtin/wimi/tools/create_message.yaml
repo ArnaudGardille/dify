@@ -1,0 +1,45 @@
+identity:
+  name: post_chat_message
+  author: Vigie
+  label:
+    en_US: Post Chat Message
+    fr_FR: Poster un message de chat
+description:
+  human:
+    en_US: Post a message to a chat.
+    fr_FR: Poster un message dans un chat.
+  llm: Post a message to a chat.
+parameters:
+  - name: message
+    type: string
+    required: true
+    label:
+      en_US: Message
+      fr_FR: Message
+    human_description:
+      en_US: The message to be posted.
+      fr_FR: Le message à poster.
+    llm_description: The message to be posted.
+    form: llm
+  - name: token
+    type: string
+    required: true
+    label:
+      en_US: Token
+      fr_FR: Jeton
+    human_description:
+      en_US: The authentication token.
+      fr_FR: Le jeton d'authentification.
+    llm_description: The authentication token.
+    form: llm
+  - name: chat_id
+    type: number
+    required: true
+    label:
+      en_US: Chat ID
+      fr_FR: ID du chat
+    human_description:
+      en_US: The ID of the chat where the message will be posted.
+      fr_FR: L'ID du chat où le message sera posté.
+    llm_description: The ID of the chat where the message will be posted.
+    form: llm

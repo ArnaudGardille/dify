@@ -68,7 +68,7 @@ parameters:
     llm_description: The authentication token.
     form: llm
   - name: project_id
-    type: number
+    type: string
     required: true
     label:
       en_US: Project ID
