@@ -79,7 +79,7 @@ class ResetPasswordApi(Resource):
         # message = {
         #     'from_email': 'noreply@example.com',
         #     'to': [{'email': account['email']}],
-        #     'subject': 'Reset your Vigie password',
+        #     'subject': 'Reset your Dify password',
         #     'html': """
         #         <p>Dear User,</p>
         #         <p>The Dify team has generated a new password for you, details as follows:</p>

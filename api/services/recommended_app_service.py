@@ -102,7 +102,7 @@ class RecommendedAppService:
     @classmethod
     def _fetch_recommended_apps_from_dify_official(cls, language: str) -> dict:
         """
-        Fetch recommended apps from vigie official.
+        Fetch recommended apps from dify official.
         :param language: language
         :return:
         """
@@ -155,7 +155,7 @@ class RecommendedAppService:
     @classmethod
     def _fetch_recommended_app_detail_from_dify_official(cls, app_id: str) -> Optional[dict]:
         """
-        Fetch recommended app detail from vigie official.
+        Fetch recommended app detail from dify official.
         :param app_id: App ID
         :return:
         """

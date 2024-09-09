@@ -33,7 +33,6 @@ RUN poetry install --sync --no-cache --no-root
 # production stage
 FROM base AS production
 
-#SELF_HOSTED CLOUD
 ENV FLASK_APP=app.py
 ENV EDITION=SELF_HOSTED
 ENV DEPLOY_ENV=PRODUCTION

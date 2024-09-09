@@ -70,10 +70,6 @@ provider_credential_schema:
           label:
             en_US: Eu west London (London)
             zh_Hans: 欧洲西部 (伦敦)
-        - value: eu-west-3
-          label:
-            en_US: Europe (Paris)
-            zh_Hans: 欧洲西部 (伦敦)
         - value: us-gov-west-1
           label:
             en_US: AWS GovCloud (US-West)
@@ -81,10 +77,6 @@ provider_credential_schema:
         - value: ap-southeast-2
           label:
             en_US: Asia Pacific (Sydney)
-            zh_Hans: 亚太地区 (悉尼)
-        - value: eu-west-3
-          label:
-            en_US: Europe (Paris)
             zh_Hans: 亚太地区 (悉尼)
     - variable: model_for_validation
       required: false
